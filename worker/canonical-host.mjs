@@ -1,3 +1,4 @@
+import { resolveCheckoutPathRedirect } from '../src/config/checkout-redirects.mjs';
 import {
   CANONICAL_ORIGIN,
   resolveCanonicalRedirect,
@@ -88,6 +89,11 @@ async function fetchAsset(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+
+    const checkout = resolveCheckoutPathRedirect(url.pathname);
+    if (checkout) {
+      return Response.redirect(checkout, 302);
+    }
 
     const redirectTarget = resolveCanonicalRedirect(request);
     if (redirectTarget) {
