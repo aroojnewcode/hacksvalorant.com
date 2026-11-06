@@ -18,7 +18,7 @@ export default defineConfig({
     '/products/r6/elite/': '/products/valorant-cheats/elite/',
     '/products/r6/hwid-spoofer/': '/products/valorant-cheats/hwid-spoofer/',
     '/products/r6/ugc/': '/products/valorant-cheats/ugc/',
-    '/products/r6/unlock-all/': '/products/valorant-cheats/unlock-all/',
+    '/products/r6/unlock-all/': '/products/valorant-cheats/skin-changer/',
     '/products/r6/utilities/': '/products/valorant-cheats/utilities/',
     '/r6-hacks/': '/',
     '/valorant-hacks/': '/',

@@ -8,6 +8,7 @@ import { blogPostLayoutTitle, blogPostPageH1, getBlogPostSeo } from '../../confi
 import {
   articleSchema,
   breadcrumbSchema,
+  organizationSchema,
   parseBlogDate,
 } from '../../utils/schema';
 import { checkoutPath, resolveCheckoutHref } from '../../config/checkout';
@@ -24,6 +25,7 @@ import { Button } from '@/components/starwind/button';
 import { Prose } from '@/components/starwind/prose';
 import BlogPostCta from '../../components/BlogPostCta.astro';
 import { normalizeInternalPath, ROUTES } from '../../utils/path';
+import { imageSizeForSrc } from '../../config/siteImages';
 
 export function getStaticPaths() {
   return getAllBlogSlugs().map((slug) => ({ params: { slug } }));
@@ -37,15 +39,9 @@ if (!post) {
 }
 
 const postPath = `/blog/${post.slug}/`;
-const blogCrumbLabels: Record<string, string> = {
-  'valorant-range-practice': 'Valorant practice guides (blog hub)',
-  'valorant-stream-proof': 'Stream-proof guides (blog hub)',
-  'valorant-minimap-radar': 'Radar hack guides (blog hub)',
-};
-const blogCrumbLabel = blogCrumbLabels[post.slug] ?? 'Blog';
 const breadcrumbs = [
   { name: 'Home', path: '/' },
-  { name: blogCrumbLabel, path: '/blog/' },
+  { name: 'Blog', path: '/blog/' },
   { name: post.title, path: postPath },
 ];
 
@@ -80,6 +76,7 @@ const postSeoMeta = getBlogPostSeo(post.slug, { title: pageTitle(post.title), de
 const layoutTitle = blogPostLayoutTitle(post.slug, post.title);
 const layoutDescription = postSeoMeta.description;
 const articleH1 = blogPostPageH1(post.slug, post.title);
+const articleImageSize = imageSizeForSrc(post.image);
 ---
 
 <BaseLayout
@@ -88,11 +85,11 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
   ogType="article"
   ogImage={post.image}
   ogImageAlt={`${post.title} — screenshot from the Valorant guide`}
-  ogImageWidth={960}
-  ogImageHeight={540}
+  ogImageWidth={articleImageSize.width}
+  ogImageHeight={articleImageSize.height}
   articlePublishedTime={published}
-  articleModifiedTime={published}
   jsonLd={[
+    organizationSchema(),
     articleSchema({
       name: articleH1,
       description: layoutDescription,

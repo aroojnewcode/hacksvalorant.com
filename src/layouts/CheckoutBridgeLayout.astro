@@ -4,6 +4,8 @@ import {
   absoluteAssetUrl,
   canonicalUrl,
   DEFAULT_OG_IMAGE,
+  DEFAULT_OG_IMAGE_HEIGHT,
+  DEFAULT_OG_IMAGE_WIDTH,
   SITE_ORIGIN,
 } from '../config/seo';
 import { FAVICON_VERSION } from '../config/site';
@@ -26,8 +28,8 @@ const {
   logoAlt,
   ogImage,
   ogImageAlt,
-  ogImageWidth = 960,
-  ogImageHeight = 540,
+  ogImageWidth = DEFAULT_OG_IMAGE_WIDTH,
+  ogImageHeight = DEFAULT_OG_IMAGE_HEIGHT,
   jsonLd,
 } = Astro.props;
 const canonical = canonicalUrl(Astro.url.pathname, SITE_ORIGIN);
@@ -68,6 +70,7 @@ const navLinks = [
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={shareImageAlt} />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={canonical} />
     {jsonLd && <JsonLd data={jsonLd} />}
     <link rel="icon" type="image/svg+xml" href={`/favicon.svg?v=${FAVICON_VERSION}`} />

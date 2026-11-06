@@ -24,7 +24,7 @@ const sourceTimestamp = (path?: string) => {
 };
 ---
 
-<BaseLayout title={seo.title} description={seo.description} jsonLd={[
+<BaseLayout title={seo.title} description={seo.description} noindex={true} jsonLd={[
   collectionPageSchema({ name: seo.title, description: seo.description, url: '/forum/' }),
   breadcrumbSchema(breadcrumbs),
 ]}>

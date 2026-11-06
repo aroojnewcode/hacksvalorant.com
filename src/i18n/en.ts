@@ -1,5 +1,6 @@
 import type { Translations } from './types';
 import { DISCORD_URL, PRODUCT_BASE } from '../config/site';
+import { checkoutPath } from '../config/checkout';
 import { cheatImageForSlug } from '../config/siteImages';
 
 const productBase = PRODUCT_BASE;
@@ -10,7 +11,7 @@ export const en: Translations = {
     domain: 'hacksvalorant.com',
     title: 'Valorant Hacks',
     description:
-      'Valorant hacks for PC — aim assist, player ESP, ability callouts, skeleton and box visuals, config profiles, and setup guides. Pricing and checkout on hacksvalorant.com.',
+      'Compare Valorant cheats for Windows PC. Review Lite, Pro, and Elite, then check out for loader access when the status banner is online.',
     discord: DISCORD_URL,
   },
   nav: [
@@ -26,23 +27,23 @@ export const en: Translations = {
     h1: 'Valorant Hacks',
     h1Accent: '',
     subtitle:
-      'Buy undetected Valorant hacks for PC—tactical overlays, tuned aim assist, player ESP, and ability callouts. Compare Lite, Pro and Elite checkout for instant loader access.',
+      'Valorant hacks for PC: tactical overlays, tuned aim assist, player ESP, and ability callouts. Compare Lite, Pro, and Elite, then check out when the status banner is online.',
     ctaPrimary: 'Buy hacks',
     ctaDiscord: 'Join Discord',
     modesLabel: 'Game modes',
     modes: ['Competitive', 'Unrated', 'Spike Rush', 'Range / Custom'],
     metrics: [
-      { label: 'Stream-safe', strong: 'Yes' },
-      { label: 'Patch speed', strong: '<24h' },
-      { label: 'Users', strong: '300+' },
-      { label: 'Support', strong: '24/7' },
+      { label: 'Platform', strong: 'Windows' },
+      { label: 'Client', strong: 'Riot' },
+      { label: 'Status', strong: 'Banner' },
+      { label: 'Help', strong: 'Discord' },
     ],
   },
   features: {
     eyebrow: 'Hack features',
     title: 'Valorant hack modules',
     subtitle:
-      'Tactical overlays and tuned aim assist stay readable in ranked—plus aimbot, player ESP, gadget ESP, and config tools for Valorant on PC.',
+      'Tactical overlays and tuned aim assist stay readable in ranked—plus aimbot, player ESP, ability markers, and config tools for Valorant on PC.',
     items: [
       {
         title: 'Aimbot',
@@ -71,22 +72,22 @@ export const en: Translations = {
         bento: 'sm:col-span-2 lg:col-span-8 lg:col-start-1 lg:row-start-2',
       },
       {
-        title: 'Gadget ESP',
-        subtitle: 'Attacker and defender tools',
-        desc: 'Highlights attacker and defender gadgets — drones, claymores, mute jammers, frost traps, ela mines, and related deployables.',
+        title: 'Ability markers',
+        subtitle: 'Smokes, flashes, and the spike',
+        desc: 'Marks enemy smokes, flashes, mollies, and the spike so you can read a site before you swing.',
         bullets: [
-          'Attacker gadget categories',
-          'Defender trap and jammer markers',
-          'Damage notifications in combat',
-          'Useful for clearing utility before pushes',
+          'Smoke, flash, and molly markers',
+          'Spike plant and defuse state',
+          'Distance on marked utility',
+          'Turn icons off when the overlay gets busy',
         ],
-        tags: ['valorant gadget ESP', 'utility ESP', 'ability tools'],
+        tags: ['ability markers', 'utility ESP', 'ability tools'],
         bento: 'sm:col-span-2 lg:col-span-4 lg:col-start-9 lg:row-start-2',
       },
       {
         title: 'Configs',
         subtitle: 'Save and load profiles',
-        desc: 'Save and load config profiles so ranked, unranked, and operator-specific setups stay consistent between sessions.',
+        desc: 'Save and load config profiles so Competitive, Unrated, and agent-specific setups stay consistent between sessions.',
         bullets: ['Save config to disk', 'Load config on launch', 'Separate profiles per playlist', 'Share presets across PCs via portal'],
         tags: ['Valorant hack config', 'profiles', 'setup'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-3',
@@ -102,12 +103,12 @@ export const en: Translations = {
       {
         title: 'Compatibility',
         subtitle: 'Windows PC requirements',
-        desc: 'Built for Valorant on Windows 10 and 11. The ZADEYO listing notes Cloud DMA for full functionality with HVCI, Core Isolation, TPM, and Secure Boot enabled.',
+        desc: 'Built for Valorant on Windows 10 and 11 through the Riot Client. Confirm the current loader notes on the product page after a Vanguard update.',
         bullets: [
           'Windows 10 or 11 (64-bit)',
-          'Intel or AMD CPU',
-          'Cloud DMA noted on product page',
-          'Check status after Vanguard or Valorant updates',
+          'Riot Client installed',
+          'Check the status banner before you launch',
+          'macOS and Linux are not supported',
         ],
         tags: ['valorant compatibility', 'Cloud DMA', 'PC'],
         bento:
@@ -116,12 +117,12 @@ export const en: Translations = {
       {
         title: 'Playlists',
         subtitle: 'Competitive Valorant focus',
-        desc: 'Designed for Valorant multiplayer playlists — ranked, unranked, quick match, and training grounds practice.',
+        desc: 'Written for Valorant on PC: Competitive, Unrated, Spike Rush, and the Range.',
         bullets: [
-          'Ranked and unranked matchmaking',
-          'Quick match rotations',
-          'Training grounds for config testing',
-          'Not aimed at single-player content',
+          'Competitive and Unrated',
+          'Spike Rush and Swiftplay',
+          'The Range for config checks',
+          'Deathmatch for aim settings',
         ],
         tags: ['valorant competitive', 'ranked', 'unrated'],
         bento:
@@ -130,8 +131,8 @@ export const en: Translations = {
       {
         title: 'Game modes',
         subtitle: 'Where players use Valorant hacks',
-        desc: 'Most buyers queue ranked or unranked bomb and secure area modes. Use conservative defaults in higher MMR lobbies.',
-        bullets: ['Ranked bomb', 'Unranked bomb', 'Quick match', 'Training grounds'],
+        desc: 'Most buyers queue Competitive or Unrated. Use the quieter preset in higher-MMR games.',
+        bullets: ['Competitive', 'Unrated', 'Spike Rush', 'The Range'],
         tags: ['Valorant hacks', 'ranked', 'bomb'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-6',
       },
@@ -149,13 +150,13 @@ export const en: Translations = {
     eyebrow: 'Why our hacks',
     title: 'Valorant hacks that stay online',
     subtitle:
-      'Most hack shops go down after Vanguard patches and leave you with bots. We ship loader updates fast, keep aimbot defaults safe for ranked play, and answer on Discord 24/7.',
+      'Most hack shops disappear after a Vanguard patch. Check the status banner, keep a conservative preset, and ask setup questions on Discord.',
     usLabel: 'Valorant Hacks',
     otherLabel: 'Typical shop',
     rows: [
       {
         title: 'Loader updates after patches',
-        desc: 'New builds usually go out within hours of a Valorant or Vanguard update. Check Discord #status before you queue.',
+        desc: 'New builds are posted after a Valorant or Vanguard update. Check Discord #status before you queue.',
       },
       {
         title: 'Smooth aimbot defaults',
@@ -180,19 +181,19 @@ export const en: Translations = {
     ],
     metrics: [
       {
-        value: '<24h',
-        title: 'Patch turnaround',
-        desc: 'Usual time to ship a loader after a big Valorant or Vanguard update.',
+        value: 'Banner',
+        title: 'Patch status',
+        desc: 'Check the live status banner after a Valorant or Vanguard update before you launch.',
       },
       {
-        value: '24/7',
+        value: 'Discord',
         title: 'Support',
-        desc: 'Discord help for setup, configs and account issues.',
+        desc: 'Discord is where setup, config, and order questions go.',
       },
       {
-        value: '300+',
-        title: 'Users',
-        desc: 'PC players using aimbot, ESP and tools on hacksvalorant.com.',
+        value: 'PC',
+        title: 'Platform',
+        desc: 'Windows 10 and 11 with the Riot Client. macOS and Linux are not supported.',
       },
     ],
   },
@@ -204,7 +205,7 @@ export const en: Translations = {
       'Buy your Valorant hack, download the loader, load a preset, then open Valorant. Discord help is there if you get stuck.',
     ctaPrimary: 'Buy hacks',
     ctaSecondary: 'Setup FAQ',
-    ctaPrimaryHref: productBase,
+    ctaPrimaryHref: checkoutPath('valorant'),
     ctaSecondaryHref: '/faq/',
     steps: [
       {
@@ -233,7 +234,7 @@ export const en: Translations = {
   hacks: {
     eyebrow: 'Elite hack',
     title: 'Valorant Elite hacks',
-    subtitle: 'Full Valorant hack suite — aimbot, wall ESP, loot assist, skin preview tools, and faster patch priority.',
+    subtitle: 'Full Valorant hack suite — aimbot, wall ESP, utility markers, skin preview tools, and faster patch priority.',
     viewAll: 'View Elite details',
     explore: 'Explore',
     items: [
@@ -263,9 +264,9 @@ export const en: Translations = {
         badge: 'Limited slots',
         tier: 'Private',
         name: 'Elite',
-        title: 'Elite Valorant Hacks — aimbot, loot assist and ESP',
-        desc: 'Buy Elite with loot-style assists, trigger modules, recoil help, full wall ESP, skin preview tools and direct Discord support.',
-        features: ['Loot-style assists', 'Trigger modules', 'Recoil help', 'Full wall ESP', 'Skin preview tools', 'Priority patch queue'],
+        title: 'Elite Valorant Hacks — aimbot, utility markers and ESP',
+        desc: 'Buy Elite with utility markers, trigger modules, recoil help, full wall ESP, skin preview tools and direct Discord support.',
+        features: ['Utility markers', 'Trigger modules', 'Recoil help', 'Full wall ESP', 'Skin preview tools', 'Priority patch queue'],
         more: 42,
         href: `${productBase}elite/`,
         variant: 'limited',
@@ -307,9 +308,9 @@ export const en: Translations = {
         title: 'Skin preview tools / Loadout Pack — Valorant cosmetics',
         subtitle: 'Preview cosmetics locally',
         desc: 'Preview weapon skins and outfits locally—does not change server inventory or store purchases.',
-        features: ['Outfit skin swap', 'Wrap & weapon customizer', 'Exclusive set preview', 'Loadout favorites export'],
+        features: ['Weapon skin preview', 'Gun buddy preview', 'Spray and player card preview', 'Local preview only'],
         more: 7,
-        href: `${productBase}unlock-all/`,
+        href: `${productBase}skin-changer/`,
       },
     ],
   },
@@ -334,45 +335,18 @@ export const en: Translations = {
         title: 'Practice range: aim drills before ranked',
         slug: 'valorant-range-practice',
         image: cheatImageForSlug('valorant-range-practice'),
-        desc: 'Use Shooting Range and bot lobbies to practice aimbot smoothness, ESP ranges and loadouts before ranked matchmaking.',
+        desc: 'Use the Range and custom games to practice aim smoothness, ESP distance, and loadouts before Competitive.',
         date: 'Oct 24, 2026',
-        readTime: '10 min read',
-      },
-      {
-        tag: 'Guides',
-        title: 'Practice range tips for aimbot and ESP',
-        slug: 'valorant-training-tips',
-        image: cheatImageForSlug('valorant-training-tips'),
-        desc: 'Shooting Range and bot-lobby workflows to tune aimbot, wall ESP and ammo ESP before ranked matchmaking.',
-        date: 'Oct 10, 2026',
-        readTime: '6 min read',
-      },
-      {
-        tag: 'Setup',
-        title: 'How to practice Valorant hacks safely',
-        slug: 'valorant-hack-setup',
-        image: cheatImageForSlug('valorant-hack-setup'),
-        desc: 'Shooting Range vs Ranked: how to test aimbot and ESP in practice islands before using private Valorant hacks.',
-        date: 'Sep 25, 2026',
-        readTime: '7 min read',
+        readTime: '4 min read',
       },
       {
         tag: 'Features',
-        title: 'Valorant hacks features: aimbot, bots, wall ESP and more',
+        title: 'Valorant hacks features: aimbot, ability markers, wall ESP and more',
         slug: 'valorant-hack-features',
         image: cheatImageForSlug('valorant-hack-features'),
-        desc: 'Complete guide to our Valorant hacks—aimbot, loot-style assists, skin preview, radar-style overlay, wall ESP and recoil help.',
+        desc: 'Complete guide to our Valorant hacks—aimbot, utility markers, skin preview, radar-style overlay, wall ESP and recoil help.',
         date: 'Sep 8, 2026',
-        readTime: '12 min read',
-      },
-      {
-        tag: 'Guides',
-        title: 'Shooting Range practice vs ranked Valorant hacks',
-        slug: 'valorant-practice-vs-ranked',
-        image: cheatImageForSlug('valorant-practice-vs-ranked'),
-        desc: 'How Shooting Range islands differ from private aimbot and ESP tools used in Multiplayer and Ranked.',
-        date: 'Aug 22, 2026',
-        readTime: '8 min read',
+        readTime: '4 min read',
       },
       {
         tag: 'Guides',
@@ -388,7 +362,7 @@ export const en: Translations = {
         title: 'Elite tier guide: when to upgrade your Valorant hacks',
         slug: 'valorant-elite-tier',
         image: cheatImageForSlug('valorant-elite-tier'),
-        desc: 'Loot-style assists, trigger modules, skin preview and full wall ESP—who Elite is for and how to tune safely.',
+        desc: 'Utility markers, trigger modules, skin preview and full wall ESP—who Elite is for and how to tune safely.',
         date: 'Jul 19, 2026',
         readTime: '7 min read',
       },
@@ -500,9 +474,9 @@ export const en: Translations = {
     items: [
       { num: '01', label: 'Aimbot', title: 'Tracking that adapts per weapon', desc: 'Smoothness, FOV, Sticky Aim and Bone Priority in one aimbot tab.' },
       { num: '02', label: 'ESP', title: 'Wall ESP that stays readable', desc: 'Boxes, skeletons, distance, health and team color filters.' },
-      { num: '03', label: 'Radar', title: 'Loot and rotates on lock', desc: 'Enemy dots, loot timers and mini-radar on a compact overlay.' },
-      { num: '04', label: 'Weapons', title: 'Per-weapon aimbot profiles', desc: 'Save AR, SMG, shotgun and sniper presets and swap with hotkeys.' },
-      { num: '05', label: 'Loot', title: 'Chest ESP & loot assist', desc: 'Chest highlights, rare drops and Elite loot-assist pathing.' },
+      { num: '03', label: 'Radar', title: 'Rotates on the minimap', desc: 'Enemy dots, site rotates, and a compact mini-radar overlay.' },
+      { num: '04', label: 'Weapons', title: 'Per-weapon aimbot profiles', desc: 'Save rifle, SMG, shotgun, and sniper presets and swap with hotkeys.' },
+      { num: '05', label: 'Utility', title: 'Ability and spike markers', desc: 'Ability callouts, spike state, and Elite utility markers on the overlay.' },
       { num: '06', label: 'Profiles', title: 'Configs for every mode', desc: 'Unrated, competitive, range and custom-game presets with cloud backup.' },
     ],
   },
@@ -513,7 +487,7 @@ export const en: Translations = {
     titleHighlight: 'in-game hacks.',
     subtitle: 'Buy Valorant hacks, download the loader, turn on modules, save your config for next match.',
     ctaLabel: 'Buy hacks',
-    ctaHref: productBase,
+    ctaHref: checkoutPath('valorant'),
     ctaSecondary: 'Setup FAQ',
     ctaSecondaryHref: '/faq/',
     items: [
@@ -533,7 +507,7 @@ export const en: Translations = {
         num: '03',
         phase: 'Loader',
         title: 'Launch and set up',
-        desc: 'Download from the portal, turn on modules, and test in Shooting Range or a bot lobby.',
+        desc: 'Download from the portal, turn on modules, and test in the Range or a custom game.',
       },
       {
         num: '04',

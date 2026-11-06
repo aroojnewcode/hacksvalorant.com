@@ -16,7 +16,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
     title: 'Valorant Hacks for Windows PC | hacksvalorant.com',
     description:
-      'Compare undetected Valorant cheats for Windows PC. Review Lite, Pro, and Elite, then check out for loader access when the status banner is online.',
+      'Compare Valorant cheats for Windows PC. Review Lite, Pro, and Elite, then check out for loader access when the status banner is online.',
     h1: 'Valorant Hacks for Windows PC',
   },
   '/products/valorant-cheats/': {
@@ -55,7 +55,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Valorant UGC recovery is an appeal workspace for Riot and Vanguard restrictions. It is not a cheat tier, and it does not guarantee an unban.',
     h1: 'Valorant UGC Recovery',
   },
-  '/products/valorant-cheats/unlock-all/': {
+  '/products/valorant-cheats/skin-changer/': {
     title: 'Valorant Skin Changer for Sale | Local Previews',
     description:
       'The Valorant skin changer previews cosmetics on your own client. It does not change the skins other players see during a live match.',
@@ -159,25 +159,10 @@ export const BLOG_POST_SEO: Record<string, Partial<PageSeoEntry>> = {
     description:
       'What to check on a Valorant patch day: status, a fresh loader download, and a custom-game test before you queue with a new build.',
   },
-  'valorant-training-tips': {
-    title: 'How to Drill Valorant ESP and Aim Before Ranked',
-    description:
-      'How to drill Valorant ESP range and aim smoothing in the range before ranked. Keep the overlay small until the read feels comfortable.',
-  },
-  'valorant-hack-setup': {
-    title: 'How to Practice Valorant Hacks Before You Queue',
-    description:
-      'How to practice Valorant cheats in the range before a live queue, including presets, status checks, and the difference between Lite and Pro.',
-  },
   'valorant-hack-features': {
     title: 'Valorant Cheat Features by Tier | ESP and Aim',
     description:
       'Valorant cheat features by tier: what Lite, Pro, and Elite include for ESP, aim, and radar. Use this to compare, then open the product page to buy.',
-  },
-  'valorant-practice-vs-ranked': {
-    title: 'How Practice Modes Differ From Live Valorant Hacks',
-    description:
-      'How Valorant practice modes differ from a live-queue loader. Range commands do not carry into ranked. This guide explains the difference.',
   },
   'valorant-lite-vs-pro': {
     title: 'How the Valorant Lite and Pro Cheat Tiers Differ',
@@ -231,9 +216,6 @@ export const BLOG_POST_PAGE_H1: Record<string, string> = {
   'valorant-external-loader': 'How External Valorant Cheat Loaders Work on PC',
   'valorant-hwid-ban': 'How to Tell a Valorant Hardware Ban From an Account Ban',
   'valorant-skin-preview': 'How the Valorant Skin Changer Local Preview Works',
-  'valorant-hack-setup': 'How to Practice Valorant Hacks Before You Queue',
-  'valorant-training-tips': 'How to Drill Valorant ESP and Aim Before Ranked',
-  'valorant-practice-vs-ranked': 'How Practice Modes Differ From Live Valorant Hacks',
   'buy-valorant-hacks': 'How to Choose and Buy a Valorant Cheat Tier Today',
   'vanguard-patch-checklist': 'Valorant Patch Day Checklist for the Loader Build',
 };

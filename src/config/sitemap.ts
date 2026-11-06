@@ -33,13 +33,7 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return item;
   }
 
-  if (path === '/forum/') {
-    item.priority = 0.8;
-    item.changefreq = 'weekly';
-    return item;
-  }
-
-  if (path.startsWith('/forum/') && path !== '/forum/') {
+  if (path === '/forum/' || path.startsWith('/forum/')) {
     return undefined;
   }
 

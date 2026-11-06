@@ -4,7 +4,7 @@ import { getPageSeoEntry } from './pageSeo';
 
 export const SITE_ORIGIN = `https://${t.site.domain}`;
 
-import { PRIMARY_CHEAT_IMAGE } from './siteImages';
+import { imageSizeForSrc, PRIMARY_CHEAT_IMAGE } from './siteImages';
 
 export const DEFAULT_OG_IMAGE = PRIMARY_CHEAT_IMAGE;
 
@@ -65,8 +65,9 @@ export function cheatMetaDescription(text: string): string {
   return text.trim();
 }
 
-export const DEFAULT_OG_IMAGE_WIDTH = 1200;
-export const DEFAULT_OG_IMAGE_HEIGHT = 630;
+const primaryImageSize = imageSizeForSrc(PRIMARY_CHEAT_IMAGE);
+export const DEFAULT_OG_IMAGE_WIDTH = primaryImageSize.width;
+export const DEFAULT_OG_IMAGE_HEIGHT = primaryImageSize.height;
 
 export const RSS_FEED_PATH = '/rss.xml';
 

@@ -3,7 +3,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getAllProductSlugs, getProductPage, productHub } from '../../../data/products';
 import { pageTitle } from '../../../config/seo';
 import { getPageSeoEntry, productPageH1 } from '../../../config/pageSeo';
-import { breadcrumbSchema, productSchema } from '../../../utils/schema';
+import { breadcrumbSchema, organizationSchema, productSchema } from '../../../utils/schema';
+import { imageSizeForSrc } from '../../../config/siteImages';
 import ProductDetail from '../../../components/ProductDetail.astro';
 
 export function getStaticPaths() {
@@ -24,6 +25,7 @@ const metaDescription =
   seoEntry?.description ??
   `Buy ${product.title} Valorant hacks — ${product.desc}`;
 const pageH1 = productPageH1(pagePath, product.title);
+const productImageSize = imageSizeForSrc(product.images[0]?.src ?? '');
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Products', path: productHub.path },
@@ -36,9 +38,10 @@ const breadcrumbs = [
   description={metaDescription}
   ogImage={product.images[0]?.src}
   ogImageAlt={product.images[0]?.alt ?? product.title}
-  ogImageWidth={960}
-  ogImageHeight={540}
+  ogImageWidth={productImageSize.width}
+  ogImageHeight={productImageSize.height}
   jsonLd={[
+    organizationSchema(),
     productSchema({
       name: pageH1,
       description: metaDescription,

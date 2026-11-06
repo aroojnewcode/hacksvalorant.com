@@ -139,7 +139,7 @@ const additionalGuidePosts: ForumPost[] = [
     sourceTitle: 'Valorant Elite tier guide',
     sourcePath: '/blog/valorant-elite-tier/',
     answer:
-      'The guide describes Elite as including the Lite and Pro feature sets plus additional utilities such as loot assist, triggerbot, recoil helpers, and skin preview tools.',
+      'The guide describes Elite as including the Lite and Pro feature sets plus additional utilities such as utility markers, triggerbot, recoil helpers, and skin preview tools.',
     detail: 'It also covers who may benefit from the extra modules and why it makes sense to understand the simpler feature set first.',
     tip: 'Compare the included features against your needs before choosing a tier; the full comparison is linked in the guide.',
   }),
@@ -309,7 +309,7 @@ export const forumPosts: ForumPost[] = [
     upvotes: 86,
     flair: 'Guide Q&A',
     sourceTitle: 'Valorant hack setup and practice workflow',
-    sourcePath: '/blog/valorant-hack-setup/',
+    sourcePath: '/blog/valorant-range-practice/',
     body: [
       'Valorant does not expose a public developer console like some older titles. For practice, use the in-client range, custom games, and the steps in the setup guide for your product.',
       'If a command or bind does nothing, confirm you are in a supported practice context and that your loader build matches the current patch notes.',
@@ -341,7 +341,7 @@ export const forumPosts: ForumPost[] = [
     upvotes: 64,
     flair: 'Guide Q&A',
     sourceTitle: 'Valorant training tips for aimbot and ESP',
-    sourcePath: '/blog/valorant-training-tips/',
+    sourcePath: '/blog/valorant-range-practice/',
     body: [
       'Practice in the Shooting Range or a custom lobby. Enable ESP boxes briefly to inspect angles and spike lines, then fight with overlays minimized.',
       'Repeat the same route a few times so sight lines stick without waiting for a full competitive match.',

@@ -1,6 +1,7 @@
 import type { FaqItem } from '../i18n/types';
 import { SUPPORT_EMAIL } from '../config/site';
 import { SITE_ORIGIN, absoluteAssetUrl, canonicalUrl, getOrganizationSameAs } from '../config/seo';
+import { getPageSeoEntry } from '../config/pageSeo';
 import { getProductPlans } from '../data/productPricing';
 
 export interface BreadcrumbItem {
@@ -30,8 +31,7 @@ export function websiteSchema() {
     url: `${SITE_ORIGIN}/`,
     publisher: { '@id': `${SITE_ORIGIN}/#organization` },
     inLanguage: 'en-US',
-    description:
-      'Valorant hacks with aim assist, ESP, radar-style overlays, skin preview tools and competitive-ready tiers for PC.',
+    description: getPageSeoEntry('/')?.description ?? '',
   };
 }
 
@@ -44,7 +44,12 @@ export function organizationSchema() {
     '@id': `${SITE_ORIGIN}/#organization`,
     name: 'Valorant Hacks',
     url: `${SITE_ORIGIN}/`,
-    logo: `${SITE_ORIGIN}/logo.svg`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_ORIGIN}/favicon-512.png`,
+      width: 512,
+      height: 512,
+    },
     email: SUPPORT_EMAIL,
     ...(sameAs.length > 0 ? { sameAs } : {}),
     contactPoint: [
@@ -122,31 +127,17 @@ export function productSchema(input: {
   plans?: ReturnType<typeof getProductPlans>;
 }) {
   const plans = input.plans ?? getProductPlans();
-  const prices = plans.map((plan) => plan.priceUsd);
-  const low = Math.min(...prices);
-  const high = Math.max(...prices);
   const pageUrl = canonicalUrl(input.url);
   const seller = { '@id': `${SITE_ORIGIN}/#organization` };
-  const offers =
-    prices.length <= 1
-      ? {
-          '@type': 'Offer',
-          price: low.toFixed(2),
-          priceCurrency: 'USD',
-          url: pageUrl,
-          availability: 'https://schema.org/InStock',
-          seller,
-        }
-      : {
-          '@type': 'AggregateOffer',
-          lowPrice: low.toFixed(2),
-          highPrice: high.toFixed(2),
-          priceCurrency: 'USD',
-          offerCount: prices.length,
-          url: pageUrl,
-          availability: 'https://schema.org/InStock',
-          seller,
-        };
+  const offers = plans.map((plan) => ({
+    '@type': 'Offer',
+    name: `${input.name} — ${plan.label}`,
+    price: plan.priceUsd.toFixed(2),
+    priceCurrency: 'USD',
+    url: pageUrl,
+    description: plan.duration,
+    seller,
+  }));
 
   return {
     '@context': 'https://schema.org',
@@ -196,7 +187,9 @@ export function articleSchema(input: {
     url: canonicalUrl(input.url),
     image: absoluteAssetUrl(input.image),
     datePublished: input.datePublished,
-    dateModified: input.dateModified ?? input.datePublished,
+    ...(input.dateModified && input.dateModified !== input.datePublished
+      ? { dateModified: input.dateModified }
+      : {}),
     inLanguage: 'en-US',
     author: {
       '@type': 'Organization',

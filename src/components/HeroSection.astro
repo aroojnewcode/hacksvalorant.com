@@ -1,6 +1,6 @@
 ---
 import { t } from '../i18n';
-import { ROUTES } from '../utils/path';
+import { checkoutPath } from '../config/checkout';
 import { heroSlides } from '../data/products';
 import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
 import ImageSlider from './ImageSlider.astro';
@@ -60,7 +60,7 @@ const heroMarqueePills = [
         <div class="flex flex-wrap justify-start gap-3 sm:gap-4">
           <Button
             as="a"
-            href={ROUTES.products}
+            href={checkoutPath('valorant')}
             data-scroll-target="products"
             variant="primary"
             size="lg"

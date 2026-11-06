@@ -38,7 +38,7 @@ function expandFaqAnswer(answer: string, faqId: string): string {
     PRODUCTS_HUB: link(`Full Valorant catalog (${faqId})`, ROUTES.products),
     HWID: link(`HWID spoofer utility — ${faqId}`, productPath('hwid-spoofer')),
     UGC: link(`UGC appeal tools — ${faqId}`, productPath('ugc')),
-    SKIN: link(`Skin preview tools pack — ${faqId}`, productPath('unlock-all')),
+    SKIN: link(`Skin preview tools pack — ${faqId}`, productPath('skin-changer')),
     FAQ_PAGE: link(`Full FAQ index — ${faqId}`, ROUTES.faq),
     BLOG: link(`Valorant blog guides — ${faqId}`, ROUTES.blog),
   };
@@ -130,7 +130,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'scripts',
     icon: 'faqWhichTierScripts',
     q: 'Which tier includes Aimbot?',
-    a: `{{PRO}} ships Aimbot, Smooth Aim, Sticky Aim and Hotkey macros. {{ELITE}} includes everything in Pro plus Loot Assist and Triggerbot. {{LITE}} has no aimbot automation.`,
+    a: `{{PRO}} ships aim assist and bone select. {{ELITE}} adds ability markers and spike readouts on top of that. {{LITE}} has no aim assist.`,
     scopes: ['pro'],
   },
   {
@@ -138,7 +138,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqRankTiers',
     q: 'How do you rank Lite vs Pro vs Elite?',
-    a: `Map awareness only → {{LITE}}. Ranked gunfights with aimbot → {{PRO}}. Full bot suite and priority patches → {{ELITE}}. Compare on each hack page or the {{FAQ_PAGE}}.`,
+    a: `Map awareness only → {{LITE}}. Aim assist and bone select → {{PRO}}. Ability markers and spike readouts → {{ELITE}}. Compare on each hack page or the {{FAQ_PAGE}}.`,
   },
   {
     id: 'elite-slots',
@@ -191,7 +191,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     icon: 'faqSkinChanger',
     q: 'Do skin preview tools modify my in-game inventory?',
     a: `{{SKIN}} previews cosmetics locally on your client. Other players see your real inventory. Included with {{ELITE}}; available standalone for cosmetic preview only.`,
-    scopes: ['unlock-all'],
+    scopes: ['skin-changer'],
   },
   {
     id: 'external-loader',
@@ -226,7 +226,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoLite',
     q: 'Who should stay on Lite?',
-    a: `Players who only want map awareness—ESP, chests, loot—and will not touch aimbot automation. If you keep enabling combo aimbot, buy {{PRO}} instead.`,
+    a: `Players who only want map awareness—ESP, ability markers, and radar—and will not touch aimbot automation. If you keep enabling combo aimbot, buy {{PRO}} instead.`,
     scopes: ['lite'],
   },
   {
@@ -234,7 +234,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoPro',
     q: 'Who should buy Pro?',
-    a: `Ranked players who want Aimbot, Smooth Aim and Hotkey macros with wall ESP included. Pro is the most popular tier at hacksvalorant.com.`,
+    a: `Ranked players who want aim assist and bone select with wall ESP included. Pro is the tier for that set on hacksvalorant.com.`,
     scopes: ['pro'],
   },
   {
@@ -242,7 +242,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoElite',
     q: 'Who should buy Elite?',
-    a: `Players who want Loot Assist, Triggerbot, skin preview tools and priority patch delivery when slots are open.`,
+    a: `Players who want utility markers, Triggerbot, skin preview tools and priority patch delivery when slots are open.`,
     scopes: ['elite'],
   },
   {
@@ -278,8 +278,8 @@ const rawSiteFaqs: SiteFaqItem[] = [
     id: 'auto-farm',
     topic: 'scripts',
     icon: 'faqAutoFarm',
-    q: 'Which tier includes Loot Assist?',
-    a: `Loot Assist, Rotation Assist AI and Auto loadout manager are {{ELITE}} only. {{PRO}} covers combat aimbot without bot farming.`,
+    q: 'Which tier includes utility markers and spike readouts?',
+    a: `Utility markers, rotate callouts, and the spike timer readout are {{ELITE}} only. {{PRO}} covers combat aimbot without those extras.`,
     scopes: ['elite'],
   },
   {
@@ -452,7 +452,7 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
       topic: 'esp',
       icon: 'faqBlogSlugEsp',
       q: 'Which tier covers wall ESP from this article?',
-      a: `{{LITE}} includes player ESP, chest locator and loot timers. {{PRO}} adds combat aimbot on the same overlay stack.`,
+      a: `{{LITE}} includes player ESP, ability markers, and radar. {{PRO}} adds combat aimbot on the same overlay stack.`,
     });
   }
   if (slug.includes('script') || slug.includes('combo') || slug.includes('auto-combo')) {
@@ -479,18 +479,18 @@ export function getBlogFaqs(tag: string, slug: string): SiteFaqItem[] {
 
 export const compareRows = [
   { feature: 'Player ESP & player boxes', icon: 'comparePlayerEsp' as const, lite: true, pro: true, elite: true },
-  { feature: 'Chest & loot locator', icon: 'compareWardLocator' as const, lite: true, pro: true, elite: true },
-  { feature: 'Loot spawn timers', icon: 'compareRuneTimer' as const, lite: true, pro: true, elite: true },
+  { feature: 'Ability and spike markers', icon: 'compareWardLocator' as const, lite: true, pro: true, elite: true },
+  { feature: 'Rotate callouts', icon: 'compareRuneTimer' as const, lite: true, pro: true, elite: true },
   { feature: 'Radar', icon: 'compareZoomHack' as const, lite: true, pro: true, elite: true },
   { feature: 'Streamproof overlay', icon: 'compareStreamproof' as const, lite: true, pro: true, elite: true },
   { feature: 'Mini wall ESP overlay', icon: 'compareRadarHack' as const, lite: true, pro: true, elite: true },
   { feature: 'Aimbot', icon: 'compareAutoCombo' as const, lite: false, pro: true, elite: true },
   { feature: 'Smooth Aim & Sticky Aim', icon: 'compareSmoothAim' as const, lite: false, pro: true, elite: true },
-  { feature: 'Bone Priority', icon: 'compareTargetSelector' as const, lite: false, pro: true, elite: true },
-  { feature: 'Hotkey macros (heals/shields)', icon: 'compareHotkeyMacros' as const, lite: false, pro: true, elite: true },
+  { feature: 'Bone select', icon: 'compareTargetSelector' as const, lite: false, pro: true, elite: true },
+  { feature: 'Aim assist', icon: 'compareHotkeyMacros' as const, lite: false, pro: true, elite: true },
   { feature: 'FOV radius drawing', icon: 'compareAbilityRadius' as const, lite: false, pro: true, elite: true },
   { feature: 'Smoke alert integration', icon: 'compareSmokeAlert' as const, lite: false, pro: true, elite: true },
-  { feature: 'Loot Assist', icon: 'compareAutoFarm' as const, lite: false, pro: false, elite: true },
+  { feature: 'Spike timer readout', icon: 'compareAutoFarm' as const, lite: false, pro: false, elite: true },
   { feature: 'Triggerbot', icon: 'compareAutoKillSteal' as const, lite: false, pro: false, elite: true },
   { feature: 'Recoil control', icon: 'compareAutoShieldBreak' as const, lite: false, pro: false, elite: true },
   { feature: 'Full wall ESP suite', icon: 'compareFullMapHack' as const, lite: false, pro: false, elite: true },

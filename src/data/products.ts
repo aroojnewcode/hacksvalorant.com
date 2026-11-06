@@ -85,7 +85,7 @@ export const productRelatedBlogSlugs: Record<string, string[]> = {
     'valorant-hwid-ban',
     'buy-valorant-hacks',
   ],
-  'unlock-all': [
+  'skin-changer': [
     'valorant-skin-preview',
     'valorant-hack-features',
     'valorant-stream-proof',
@@ -218,7 +218,7 @@ const tierAbout: Record<string, ProductPage['about']> = {
     { type: 'h2', text: 'Ranked-safe by design' },
     {
       type: 'p',
-      text: 'Lite skips Aimbot and bot modules entirely. Your gameplay looks natural while ESP, radar hack and loot timers keep you informed. Stream-proof mode hides overlays from OBS capture for content creators.',
+      text: 'Lite skips Aimbot and bot modules entirely. Your gameplay looks natural while ESP, radar, and ability markers keep you informed. Stream-proof mode hides overlays from OBS capture for content creators.',
     },
   ],
   pro: [
@@ -229,13 +229,13 @@ const tierAbout: Record<string, ProductPage['about']> = {
     { type: 'h2', text: 'Aimbot + awareness combined' },
     {
       type: 'p',
-      text: 'Pro inherits every Lite module and adds Aimbot, Bone Priority, Hotkey macros and FOV and smoothness drawing. You see the fight before it starts and win it with aimbot that stay human at default settings.',
+      text: 'Pro inherits every Lite module and adds aim assist and bone select. You see the fight before it starts, and the default preset stays smooth.',
     },
   ],
   elite: [
     {
       type: 'p',
-      text: 'Elite is the private build for players who want everything—loot-style assists, trigger-style modules, recoil help, skin preview tools, full wall ESP and direct developer support. Limited slots keep the build maintainable and patch cycles fast.',
+      text: 'Elite is the private build for players who want everything—utility markers, trigger-style modules, recoil help, skin preview tools, full wall ESP and direct developer support. Limited slots keep the build maintainable and patch cycles fast.',
     },
     { type: 'h2', text: 'Use Elite responsibly' },
     {
@@ -262,7 +262,7 @@ const tierBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Aimbot and automation' },
     {
       type: 'p',
-      text: 'Aimbot, Smooth Aim, Sticky Aim with Prediction, Bone Priority and hotkey macros for heals and mobility. Smoothness sliders tunes cast timing so aimbot stay natural in ranked. Start with portal presets, not max sliders.',
+      text: 'Aim assist, bone select, and a smoothness slider. Start with a portal preset, not the maximum setting.',
     },
     { type: 'h2', text: 'Recommended pairing' },
     {
@@ -274,7 +274,7 @@ const tierBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Full bot and finish suite' },
     {
       type: 'p',
-      text: 'Loot-style assists, rotation helpers, trigger-style modules, recoil help, skin preview tools and full wall ESP with smoke-style alerts. Use custom-game testing before ranked—Elite power requires disciplined profiles, not rage settings.',
+      text: 'Utility markers, rotate helpers, trigger-style modules, recoil help, skin preview tools and full wall ESP with smoke-style alerts. Use custom-game testing before ranked—Elite power requires disciplined profiles, not rage settings.',
     },
     { type: 'h2', text: 'Availability' },
     {
@@ -309,7 +309,7 @@ const utilityBodies: Record<string, ProductPage['body']> = {
       text: `Some Vanguard bans cannot be reversed. UGC organizes evidence and follow-ups for Riot review. Pair with [HWID Spoofer](${productBase}hwid-spoofer/) when hardware is flagged, or a new account when reputation is burned.`,
     },
   ],
-  'unlock-all': [
+  'skin-changer': [
     { type: 'h2', text: 'Local preview only' },
     {
       type: 'p',
@@ -334,14 +334,14 @@ const productContent: Record<
     systemRequirements: valorantSystemRequirements,
     fullFeatures: [
       'Player ESP & player boxes',
-      'Gadget & objective locator',
-      'POI awareness',
+      'Ability and spike markers',
+      'Site awareness',
       'Health & shield tracking',
       'Mini-radar overlay',
       'Streamproof overlay mode',
       'Distance readouts',
       'Team color filter',
-      'Roam timers',
+      'Rotate timers',
       'Radar hack',
       'Unrated preset config',
       'Ranked preset config',
@@ -351,7 +351,7 @@ const productContent: Record<
     overview: {
       title: 'Lite: ESP and radar',
       paragraphs: [
-        'Lite is for player ESP, gadget markers, roam timers and radar. No aimbot. Set distance, colors and stream-proof in the portal before you queue.',
+        'Lite is for player ESP, ability markers, rotate timers and radar. No aimbot. Set distance, colors and stream-proof in the portal before you queue.',
         'Best if you want awareness in unrated and competitive without combat automation. Overlays are updated after Valorant patches.',
       ],
     },
@@ -367,8 +367,8 @@ const productContent: Record<
       'Smooth Aim',
       'Sticky Aim & Prediction',
       'Bone Priority',
-      'Hotkey macros (heals/shields)',
-      'Auto Heal',
+      'Aim assist',
+      'Bone select',
       'FOV & smoothness tuning',
       'Per-weapon aimbot profiles',
       'Third-party alert integration',
@@ -381,8 +381,8 @@ const productContent: Record<
     overview: {
       title: 'Pro: aim assist plus ESP',
       paragraphs: [
-        'Pro includes everything in Lite, plus Aimbot, Smooth Aim, Sticky Aim and hotkey macros. Aim settings live in one tab. Start with a portal preset, not max sliders.',
-        'Most people pick Pro for unrated and competitive. Bone priority and macros help in aim duels while defaults stay smooth.',
+        'Pro includes everything in Lite, plus aim assist and bone select. Aim settings live in one tab. Start with a portal preset, not the maximum setting.',
+        'Most people pick Pro for Unrated and Competitive. Bone select stays on chest until you choose a head preset.',
       ],
     },
   },
@@ -393,10 +393,10 @@ const productContent: Record<
     systemRequirements: valorantSystemRequirements,
     fullFeatures: [
       'All Lite + Pro modules',
-      'Loot Assist',
-      'Rotation Assist AI',
-      'Chest respawn timer',
-      'Auto loadout manager',
+      'Utility markers',
+      'Rotate callouts',
+      'Spike timer readout',
+      'Config profile manager',
       'Triggerbot',
       'Recoil control',
       'Full wall ESP suite',
@@ -413,7 +413,7 @@ const productContent: Record<
     overview: {
       title: 'Elite: full hack + extras',
       paragraphs: [
-        'Elite includes Lite and Pro modules, plus loot-style assists, trigger-style modules, recoil help, skin preview tools, full wall ESP and faster patch priority.',
+        'Elite includes Lite and Pro modules, plus utility markers, trigger-style modules, recoil help, skin preview tools, full wall ESP and faster patch priority.',
         'Elite slots are limited. Discord support helps you set safer profiles before ranked matchmaking. Check the status banner on hacksvalorant.com before you buy Elite access.',
       ],
     },
@@ -459,7 +459,7 @@ const productContent: Record<
     limitations:
       'UGC does not guarantee account restoration. Results vary by case type. Permanent Vanguard bans may require a new account path instead of appeal.',
     systemRequirements: [
-      { icon: 'reqMailOrder', text: 'Order email used at checkout on hacksvalorant.com or at checkout on hacksvalorant.com.' },
+      { icon: 'reqMailOrder', text: 'Order email used at checkout on hacksvalorant.com.' },
       { icon: 'reqShieldAccount', text: 'Account details and ban or restriction notification if available.' },
       { icon: 'reqWifiPortal', text: 'Internet access for Discord support and case dashboard.' },
     ],
@@ -482,7 +482,7 @@ const productContent: Record<
       ],
     },
   },
-  'unlock-all': {
+  'skin-changer': {
     images: slide('gpGameplay', 'gpEspWallhack', 'gpAimbotEsp'),
     goodToKnow:
       'Loadout Pack previews cosmetics locally on your client. Other players in your lobby see your real inventory—not preview skins. Included with Elite tier.',
@@ -490,12 +490,12 @@ const productContent: Record<
       'Local preview only—does not modify in-game inventory or store state. Other players cannot see previewed skins or sets.',
     systemRequirements: valorantSystemRequirements,
     fullFeatures: [
-      'Outfit skin swap',
+      'Weapon skin preview',
       'Skin & wrap preview',
-      'Pickaxe & wrap customizer',
+      'Weapon skin and gun buddy preview',
       'Loading screen editor',
       'Cursor & HUD theme',
-      'Chest & loot replacer',
+      'Spray and player card preview',
       'Favorites list',
       'Loadout export',
     ],
