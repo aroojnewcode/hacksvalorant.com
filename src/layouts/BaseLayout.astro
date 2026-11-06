@@ -23,6 +23,8 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   ogType?: 'website' | 'article';
   articlePublishedTime?: string;
   articleModifiedTime?: string;
@@ -35,6 +37,8 @@ const {
   description = t.site.description,
   ogImage = DEFAULT_OG_IMAGE,
   ogImageAlt = title,
+  ogImageWidth = DEFAULT_OG_IMAGE_WIDTH,
+  ogImageHeight = DEFAULT_OG_IMAGE_HEIGHT,
   ogType = 'website',
   articlePublishedTime,
   articleModifiedTime,
@@ -46,7 +50,7 @@ const canonical = canonicalUrl(Astro.url.pathname, SITE_ORIGIN);
 const faviconQuery = `?v=${FAVICON_VERSION}`;
 const ogImageUrl = absoluteAssetUrl(ogImage);
 const robotsContent = noindex
-  ? 'noindex, nofollow'
+  ? 'noindex, follow'
   : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 ---
 
@@ -68,14 +72,12 @@ const robotsContent = noindex
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={t.site.name} />
-    <meta name="application-name" content="R6 Hacks" />
-    <meta name="apple-mobile-web-app-title" content="R6 Hacks" />
+    <meta name="application-name" content="Valorant Hacks" />
+    <meta name="apple-mobile-web-app-title" content="Valorant Hacks" />
     <meta name="robots" content={robotsContent} />
     <meta name="googlebot" content={robotsContent} />
     <meta name="theme-color" content="#2d6ee2" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={canonical} />
-    <link rel="alternate" hreflang="en-US" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={canonical} />
     <link
       rel="alternate"
@@ -98,8 +100,8 @@ const robotsContent = noindex
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:secure_url" content={ogImageUrl} />
     <meta property="og:image:alt" content={ogImageAlt} />
-    <meta property="og:image:width" content={String(DEFAULT_OG_IMAGE_WIDTH)} />
-    <meta property="og:image:height" content={String(DEFAULT_OG_IMAGE_HEIGHT)} />
+    <meta property="og:image:width" content={String(ogImageWidth)} />
+    <meta property="og:image:height" content={String(ogImageHeight)} />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={t.site.name} />

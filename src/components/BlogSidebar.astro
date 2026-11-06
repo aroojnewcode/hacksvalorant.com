@@ -35,47 +35,47 @@ const toc = post.body
   }));
 
 const defaultProductLinks: { label: string; href: string; icon: IconName }[] = [
-  { label: 'Rainbow Six Siege products', href: ROUTES.products, icon: 'sidebarHub' },
+  { label: 'Valorant hack products', href: ROUTES.products, icon: 'sidebarHub' },
   { label: 'Elite hacks', href: ROUTES.productsElite, icon: 'sidebarElite' },
-  { label: 'Operator loadout tools', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+  { label: 'Skin preview tools', href: productPath('unlock-all'), icon: 'sidebarSkin' },
   { label: 'HWID Spoofer', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
   { label: 'UGC', href: productPath('ugc'), icon: 'sidebarUgc' },
 ];
 
-const eacGuideProductLinks: { label: string; href: string; icon: IconName }[] = [
-  { label: 'R6 catalog (eac sidebar)', href: ROUTES.products, icon: 'sidebarHub' },
-  { label: 'Elite tier (eac sidebar)', href: ROUTES.productsElite, icon: 'sidebarElite' },
-  { label: 'Operator loadout tools pack', href: productPath('unlock-all'), icon: 'sidebarSkin' },
-  { label: 'HWID spoofer utility (eac)', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+const verifyGuideProductLinks: { label: string; href: string; icon: IconName }[] = [
+  { label: 'Valorant catalog (verify guide)', href: ROUTES.products, icon: 'sidebarHub' },
+  { label: 'Elite tier (verify guide)', href: ROUTES.productsElite, icon: 'sidebarElite' },
+  { label: 'Skin preview pack', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+  { label: 'HWID spoofer utility', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
   { label: 'UGC appeal workspace', href: productPath('ugc'), icon: 'sidebarUgc' },
 ];
 
 const streamProofProductLinks: { label: string; href: string; icon: IconName }[] = [
-  { label: 'R6 shop (stream sidebar)', href: ROUTES.products, icon: 'sidebarHub' },
+  { label: 'Valorant shop (stream)', href: ROUTES.products, icon: 'sidebarHub' },
   { label: 'Elite capture tools (stream)', href: ROUTES.productsElite, icon: 'sidebarElite' },
-  { label: 'Operator loadout tools (stream)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+  { label: 'Skin preview (stream)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
   { label: 'HWID spoofer (stream setup)', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
   { label: 'UGC appeals (stream)', href: productPath('ugc'), icon: 'sidebarUgc' },
 ];
 
-const practiceLobbyProductLinks: { label: string; href: string; icon: IconName }[] = [
-  { label: 'Practice hub — R6 products', href: ROUTES.products, icon: 'sidebarHub' },
+const practiceRangeProductLinks: { label: string; href: string; icon: IconName }[] = [
+  { label: 'Practice hub — Valorant products', href: ROUTES.products, icon: 'sidebarHub' },
   { label: 'Elite tier (post-drill ranked)', href: ROUTES.productsElite, icon: 'sidebarElite' },
-  { label: 'Loadout tools (practice sidebar)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
-  { label: 'HWID spoofer (practice guide)', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+  { label: 'Skin preview (practice)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+  { label: 'HWID spoofer (practice)', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
   { label: 'UGC workspace (practice)', href: productPath('ugc'), icon: 'sidebarUgc' },
 ];
 
 const radarGuideProductLinks: { label: string; href: string; icon: IconName }[] = [
-  { label: 'R6 shop (radar sidebar)', href: ROUTES.products, icon: 'sidebarHub' },
+  { label: 'Valorant shop (radar)', href: ROUTES.products, icon: 'sidebarHub' },
   { label: 'Elite tier (radar + aimbot)', href: ROUTES.productsElite, icon: 'sidebarElite' },
-  { label: 'Loadout tools (radar guide)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
-  { label: 'HWID spoofer (radar setup)', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
+  { label: 'Skin preview (radar)', href: productPath('unlock-all'), icon: 'sidebarSkin' },
+  { label: 'HWID spoofer (radar)', href: productPath('hwid-spoofer'), icon: 'sidebarHwid' },
   { label: 'UGC appeals (radar)', href: productPath('ugc'), icon: 'sidebarUgc' },
 ];
 
 const buyGuideProductLinks: { label: string; href: string; icon: IconName }[] = [
-  { label: 'Compare all R6 hack tiers', href: ROUTES.products, icon: 'sidebarHub' },
+  { label: 'Compare all Valorant hack tiers', href: ROUTES.products, icon: 'sidebarHub' },
   { label: 'Lite ESP product page', href: productPath('lite'), icon: 'sidebarElite' },
   { label: 'Pro aimbot product page', href: productPath('pro'), icon: 'sidebarElite' },
   { label: 'Elite automation product page', href: ROUTES.productsElite, icon: 'sidebarElite' },
@@ -83,7 +83,7 @@ const buyGuideProductLinks: { label: string; href: string; icon: IconName }[] = 
 ];
 
 const patchGuideProductLinks: { label: string; href: string; icon: IconName }[] = [
-  { label: 'Live status — R6 product hub', href: ROUTES.products, icon: 'sidebarHub' },
+  { label: 'Live status — Valorant product hub', href: ROUTES.products, icon: 'sidebarHub' },
   { label: 'Reload Lite ESP after updates', href: productPath('lite'), icon: 'sidebarElite' },
   { label: 'Reload Pro aimbot after updates', href: productPath('pro'), icon: 'sidebarElite' },
   { label: 'Elite tier patch-day presets', href: ROUTES.productsElite, icon: 'sidebarElite' },
@@ -91,17 +91,17 @@ const patchGuideProductLinks: { label: string; href: string; icon: IconName }[] 
 ];
 
 const productLinks =
-  post.slug === 'battleye-fix'
-    ? eacGuideProductLinks
-    : post.slug === 'r6-stream-proof'
+  post.slug === 'vanguard-verify-fix'
+    ? verifyGuideProductLinks
+    : post.slug === 'valorant-stream-proof'
       ? streamProofProductLinks
-      : post.slug === 'r6-practice-lobby'
-        ? practiceLobbyProductLinks
-        : post.slug === 'r6-radar'
+      : post.slug === 'valorant-range-practice'
+        ? practiceRangeProductLinks
+        : post.slug === 'valorant-minimap-radar'
           ? radarGuideProductLinks
-          : post.slug === 'buy-r6-hacks'
+          : post.slug === 'buy-valorant-hacks'
             ? buyGuideProductLinks
-            : post.slug === 'battleye-patch'
+            : post.slug === 'vanguard-patch-checklist'
               ? patchGuideProductLinks
               : defaultProductLinks;
 ---
@@ -183,7 +183,7 @@ const productLinks =
     </ul>
     <Button
       as="a"
-      href={checkoutPath('r6')}
+      href={checkoutPath('valorant')}
       variant="primary"
       size="sm"
       class="blog-sidebar__cta mt-2.5 w-full min-w-0 justify-start"
@@ -191,19 +191,19 @@ const productLinks =
     >
       <span class="truncate">
         {
-          post.slug === 'battleye-fix'
-            ? 'Start R6 checkout'
-            : post.slug === 'r6-stream-proof'
+          post.slug === 'vanguard-verify-fix'
+            ? 'Start Valorant checkout'
+            : post.slug === 'valorant-stream-proof'
               ? 'Checkout stream-proof tier'
-              : post.slug === 'r6-practice-lobby'
+              : post.slug === 'valorant-range-practice'
                 ? 'Checkout after range drills'
-                : post.slug === 'r6-radar'
+                : post.slug === 'valorant-minimap-radar'
                   ? 'Checkout Lite radar tier'
-                  : post.slug === 'buy-r6-hacks'
+                  : post.slug === 'buy-valorant-hacks'
                     ? 'Open secure checkout (buy guide)'
-                    : post.slug === 'battleye-patch'
+                    : post.slug === 'vanguard-patch-checklist'
                       ? 'Checkout after status is green'
-                      : 'Buy R6 Hacks'
+                      : 'Buy Valorant Hacks'
         }
       </span>
       <Icon name="arrowRight" size={16} class="shrink-0" />
@@ -212,40 +212,39 @@ const productLinks =
 </aside>
 
 <script>
-  const tocRoot = document.querySelector('[data-blog-toc]');
-  if (tocRoot) {
-    const links = [...tocRoot.querySelectorAll<HTMLButtonElement>('[data-toc-target]')];
+  (() => {
+    const tocRoot = document.querySelector('[data-blog-toc]');
+    if (!tocRoot) return;
+    const links = [...tocRoot.querySelectorAll('.blog-toc-link')];
     const headings = links
-      .map((link) => document.getElementById(link.getAttribute('data-toc-target')!))
-      .filter((el): el is HTMLElement => Boolean(el));
+      .map((link) => document.getElementById(link.getAttribute('data-toc-target')))
+      .filter((el) => el instanceof HTMLElement);
+    if (headings.length === 0) return;
+
+    const setActive = () => {
+      const scrollPos = window.scrollY + 120;
+      let current = headings[0];
+      for (const h of headings) {
+        if (h.offsetTop <= scrollPos) current = h;
+      }
+      links.forEach((link) => {
+        const id = link.getAttribute('data-toc-target');
+        link.classList.toggle('is-active', id === current.id);
+      });
+    };
 
     links.forEach((link) => {
       link.addEventListener('click', () => {
         const id = link.getAttribute('data-toc-target');
-        if (!id) return;
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const target = id ? document.getElementById(id) : null;
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', `#${id}`);
+        }
       });
     });
 
-    if (headings.length > 0) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          const visible = entries
-            .filter((entry) => entry.isIntersecting)
-            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-          if (!visible) return;
-
-          links.forEach((link) => link.classList.remove('is-active'));
-          const active = links.find(
-            (link) => link.getAttribute('data-toc-target') === visible.target.id,
-          );
-          active?.classList.add('is-active');
-        },
-        { rootMargin: '-20% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] },
-      );
-
-      headings.forEach((heading) => observer.observe(heading));
-    }
-  }
+    window.addEventListener('scroll', setActive, { passive: true });
+    setActive();
+  })();
 </script>

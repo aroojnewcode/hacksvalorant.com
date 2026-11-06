@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { resolve301Redirect } from '../src/config/redirect-map.mjs';
 import { resolveDistDir } from './dist-dir.mjs';
 
-const SITE = 'https://r6hacks.org';
+const SITE = 'https://hacksvalorant.com';
 const dist = resolveDistDir();
 const publicDir = path.join(process.cwd(), 'public');
 
@@ -74,12 +75,14 @@ function normalizeUrl(loc) {
     return null;
   }
   if (url.protocol !== 'https:') url.protocol = 'https:';
-  url.hostname = 'r6hacks.org';
+  url.hostname = 'hacksvalorant.com';
   url.hash = '';
   url.search = '';
   let pathname = url.pathname;
   if (!pathname.endsWith('/')) pathname += '/';
   if (pathname.includes('/404') || pathname.startsWith('/go/')) return null;
+  if (pathname.startsWith('/forum/') && pathname !== '/forum/') return null;
+  if (resolve301Redirect(pathname)) return null;
   return `${SITE}${pathname}`;
 }
 
@@ -96,7 +99,6 @@ function bucketFor(loc) {
   const path = new URL(loc).pathname;
   if (path.startsWith('/blog/')) return 'blog';
   if (path.startsWith('/products/')) return 'products';
-  if (path.startsWith('/forum/')) return 'forum';
   return 'pages';
 }
 
@@ -149,7 +151,6 @@ const byBucket = {
   pages: /** @type {SitemapUrl[]} */ ([]),
   products: /** @type {SitemapUrl[]} */ ([]),
   blog: /** @type {SitemapUrl[]} */ ([]),
-  forum: /** @type {SitemapUrl[]} */ ([]),
 };
 
 const seen = new Set();
@@ -179,7 +180,6 @@ const childFiles = [
   { key: 'pages', name: 'sitemap-pages.xml' },
   { key: 'products', name: 'sitemap-products.xml' },
   { key: 'blog', name: 'sitemap-blog.xml' },
-  { key: 'forum', name: 'sitemap-forum.xml' },
 ];
 
 const written = [];
@@ -193,21 +193,20 @@ for (const child of childFiles) {
 }
 
 const indexXml = renderIndex(written);
-// GSC entry point: /sitemap.xml is the index (also mirrored as sitemap-index.xml).
 writeSeoAsset('sitemap.xml', indexXml);
-writeSeoAsset('sitemap-index.xml', indexXml);
 
-// Keep a combined urlset for IndexNow + tools that expect one file of <url> entries.
-const allUrls = childFiles.flatMap((c) => byBucket[c.key]);
-writeSeoAsset('sitemap-0.xml', renderUrlset(allUrls));
-writeSeoAsset('sitemap-all.xml', renderUrlset(allUrls));
+for (const stale of ['sitemap-index.xml', 'sitemap-0.xml', 'sitemap-all.xml', 'sitemap-forum.xml']) {
+  for (const dir of [dist, publicDir]) {
+    const file = path.join(dir, stale);
+    if (fs.existsSync(file)) fs.unlinkSync(file);
+  }
+}
 
 console.log(`Sitemap finalized: ${total} URLs`);
 for (const w of written) {
   console.log(`  ${w.name}: ${w.count}`);
 }
-console.log('  sitemap.xml / sitemap-index.xml → index');
-console.log('  sitemap-all.xml → combined urlset');
+console.log('  sitemap.xml → index');
 
 const robotsTxt = `User-agent: *
 Allow: /

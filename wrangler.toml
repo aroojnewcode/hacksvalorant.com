@@ -1,6 +1,6 @@
 # Static Astro site — do not auto-add @astrojs/cloudflare (keeps output in dist/).
-# Must match audit/preview host: https://r6-hacks--org.<account>.workers.dev
-name = "r6-hacks--org"
+# Production hostname: https://hacksvalorant.com (www and http redirect in the worker).
+name = "hacksvalorant-com"
 main = "worker/canonical-host.mjs"
 compatibility_date = "2025-10-11"
 workers_dev = true
@@ -15,4 +15,4 @@ binding = "ASSETS"
 run_worker_first = true
 not_found_handling = "404-page"
 html_handling = "none"
-# Attach r6hacks.org to this Worker in Cloudflare Dashboard (zone is on another account).
+# Attach hacksvalorant.com to this Worker. In the zone, set Always Use HTTPS and www → apex.

@@ -1,40 +1,56 @@
-/** Approved Rainbow Six Siege media — only these assets are used site-wide. */
+/** Approved Valorant media — only these assets are used site-wide (Supabase CDN). */
 export interface SiteCheatImage {
   src: string;
   alt: string;
 }
 
-const R6_MEDIA_BASE =
-  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/r6';
+const BASE =
+  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/valorant';
 
 export const SITE_CHEAT_IMAGES: SiteCheatImage[] = [
   {
-    src: `${R6_MEDIA_BASE}/f8fb1df6-697d-4d9b-b239-91326d061bf8/1793467017920-wcqjc4-7.webp`,
-    alt: 'Rainbow Six Siege PC ranked match firefight with operators breaching a site',
+    src: `${BASE}/bb902cc3-6729-4ed5-953e-cf39fa2fe40e/1793948113162-cuwkmp-futuristic-fps-corridor-with-aim-assist-overlay.webp`,
+    alt: 'Futuristic FPS corridor with aim-assist style overlay — Valorant-style PC gameplay visualization',
   },
   {
-    src: `${R6_MEDIA_BASE}/f8fb1df6-697d-4d9b-b239-91326d061bf8/1793466989730-wh94c1-1.webp`,
-    alt: 'Rainbow Six Siege gameplay scene showing tactical operator movement on PC',
+    src: `${BASE}/02ab714e-de37-423b-81f2-afd7f7fd8d28/1793455134160-cu8lx0-whsatano-valorant-s2-e756aae18c6c.webp`,
+    alt: 'Valorant competitive scene with tactical HUD elements on PC',
   },
   {
-    src: `${R6_MEDIA_BASE}/f8fb1df6-697d-4d9b-b239-91326d061bf8/1793466995758-0n86gr-2.webp`,
-    alt: 'Rainbow Six Siege close-quarters gunfight with destructible environment on PC',
+    src: `${BASE}/02ab714e-de37-423b-81f2-afd7f7fd8d28/1793455063253-xwjslf-1-2-webp-309350f53434ceeb48bfb1837f8647ba.webp`,
+    alt: 'Valorant map engagement with ability and combat UI on screen',
   },
   {
-    src: `${R6_MEDIA_BASE}/05c202fe-8171-4881-bc3a-b25833919850/1793293183726-gopke1-r6s-multihack-s1.webp`,
-    alt: 'Rainbow Six Siege hack menu preview with ESP and aimbot modules on PC',
+    src: `${BASE}/02ab714e-de37-423b-81f2-afd7f7fd8d28/1793455014013-in14n8-2-webp-7f1f09ea0214f5ec9ccb296f8cf86329.webp`,
+    alt: 'Valorant round with operator ability callouts and overlay readouts',
   },
   {
-    src: `${R6_MEDIA_BASE}/f8fb1df6-697d-4d9b-b239-91326d061bf8/1793467164902-dhd3cn-9.webp`,
-    alt: 'Rainbow Six Siege operator ESP overlay and gadget awareness on PC',
+    src: `${BASE}/02ab714e-de37-423b-81f2-afd7f7fd8d28/1793449666887-9n7cly-valorant-esp-archway-showdown.webp`,
+    alt: 'Valorant archway firefight with awareness-style overlay on PC',
+  },
+  {
+    src: `${BASE}/02ab714e-de37-423b-81f2-afd7f7fd8d28/1793449561475-pz9603-snowy-industrial-alley-with-esp-overlays.webp`,
+    alt: 'Industrial alley map with ESP-style highlights in a Valorant match',
+  },
+  {
+    src: `${BASE}/02ab714e-de37-423b-81f2-afd7f7fd8d28/1793449284668-okxp6u-futuristic-valorant-corridor-battle-hud.webp`,
+    alt: 'Futuristic corridor duel with battle HUD — Valorant PC',
+  },
+  {
+    src: `${BASE}/02ab714e-de37-423b-81f2-afd7f7fd8d28/1793449228156-inb3kd-valorant-sci-fi-showdown-hud.webp`,
+    alt: 'Sci-fi showdown moment with Valorant-style HUD on PC',
+  },
+  {
+    src: `${BASE}/02ab714e-de37-423b-81f2-afd7f7fd8d28/1793447216384-wls48q-valorant-jett-knives-at-a-belt-1.webp`,
+    alt: 'Valorant agent ability showcase — duelist-style knives at the belt',
   },
 ];
 
 /** Product detail screenshot carousel (three slides). */
 export const PRODUCT_GALLERY_IMAGES: SiteCheatImage[] = [
-  SITE_CHEAT_IMAGES[3]!,
   SITE_CHEAT_IMAGES[4]!,
-  SITE_CHEAT_IMAGES[1]!,
+  SITE_CHEAT_IMAGES[5]!,
+  SITE_CHEAT_IMAGES[6]!,
 ];
 
 export const PRIMARY_CHEAT_IMAGE = SITE_CHEAT_IMAGES[0].src;

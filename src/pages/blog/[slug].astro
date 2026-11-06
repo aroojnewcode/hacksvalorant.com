@@ -38,9 +38,9 @@ if (!post) {
 
 const postPath = `/blog/${post.slug}/`;
 const blogCrumbLabels: Record<string, string> = {
-  'r6-practice-lobby': 'R6 practice guides (blog hub)',
-  'r6-stream-proof': 'Stream-proof guides (blog hub)',
-  'r6-radar': 'Radar hack guides (blog hub)',
+  'valorant-range-practice': 'Valorant practice guides (blog hub)',
+  'valorant-stream-proof': 'Stream-proof guides (blog hub)',
+  'valorant-minimap-radar': 'Radar hack guides (blog hub)',
 };
 const blogCrumbLabel = blogCrumbLabels[post.slug] ?? 'Blog';
 const breadcrumbs = [
@@ -50,8 +50,8 @@ const breadcrumbs = [
 ];
 
 const related =
-  post.slug === 'battleye-patch'
-    ? getBlogPostsBySlugs(['battleye-fix', 'buy-r6-hacks', 'r6-external-loader'])
+  post.slug === 'vanguard-patch-checklist'
+    ? getBlogPostsBySlugs(['vanguard-verify-fix', 'buy-valorant-hacks', 'valorant-external-loader'])
     : getRelatedBlogPosts(post.slug, 3);
 
 function linkify(text: string): string {
@@ -60,11 +60,11 @@ function linkify(text: string): string {
       const normalized = normalizeInternalPath(href);
       return `<a href="${normalized}">${label}</a>`;
     })
-    .replace(/(https:\/\/r6hacks\.com[^\s.,;)]*)/g, (_match, url: string) => {
-      const path = url.replace(/^https:\/\/r6hacks\.com/, '');
-      const normalized = normalizeInternalPath(path);
-      const href = normalized.startsWith('http') ? normalized : `https://r6hacks.org${normalized}`;
-      return `<a href="${href}">${url}</a>`;
+    .replace(/https:\/\/(?:r6hacks|hacksvalorant)\.com([^\s.,;)]*)/g, (_match, pathPart: string) => {
+      const normalized = normalizeInternalPath(pathPart);
+      const href = normalized.startsWith('http') ? normalized : `https://hacksvalorant.com${normalized}`;
+      const displayUrl = `https://hacksvalorant.com${pathPart}`;
+      return `<a href="${href}">${displayUrl}</a>`;
     });
 }
 
@@ -87,12 +87,14 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
   description={layoutDescription}
   ogType="article"
   ogImage={post.image}
-  ogImageAlt={post.title}
+  ogImageAlt={`${post.title} — screenshot from the Valorant guide`}
+  ogImageWidth={960}
+  ogImageHeight={540}
   articlePublishedTime={published}
   articleModifiedTime={published}
   jsonLd={[
     articleSchema({
-      name: layoutTitle,
+      name: articleH1,
       description: layoutDescription,
       url: postPath,
       image: post.image,
@@ -126,11 +128,11 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
             <ResponsiveImage
               src={post.image}
               alt={
-                post.slug === 'battleye-fix'
-                  ? `${post.title} — BattlEye verification troubleshooting on PC`
-                  : post.slug === 'r6-stream-proof'
+                post.slug === 'vanguard-verify-fix'
+                  ? `${post.title} — Vanguard verification troubleshooting on PC`
+                  : post.slug === 'valorant-stream-proof'
                     ? `${post.title} — hide wall ESP and script overlays on stream`
-                    : `${post.title} — Rainbow Six Siege hack gameplay screenshot`
+                    : `${post.title} — Valorant hack gameplay screenshot`
               }
               width={960}
               height={540}
@@ -191,13 +193,13 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
                     html={linkify(block.text)}
                     href={resolveCheckoutHref(block.href)}
                     buyLabel={
-                      post.slug === 'r6-practice-lobby'
-                        ? 'Checkout after Shooting Range drills (CTA)'
-                        : post.slug === 'r6-stream-proof'
+                      post.slug === 'valorant-range-practice'
+                        ? 'Checkout after practice range drills (CTA)'
+                        : post.slug === 'valorant-stream-proof'
                           ? 'Buy stream-proof tier (inline CTA)'
-                          : post.slug === 'buy-r6-hacks'
+                          : post.slug === 'buy-valorant-hacks'
                             ? 'Complete Lite, Pro or Elite checkout'
-                            : post.slug === 'battleye-patch'
+                            : post.slug === 'vanguard-patch-checklist'
                               ? 'Open checkout after patch-day verify'
                               : undefined
                     }
@@ -209,55 +211,55 @@ const articleH1 = blogPostPageH1(post.slug, post.title);
           </Prose>
 
           <nav class="blog-article__actions" aria-label="Continue reading">
-            <Button as="a" href={checkoutPath('r6')} variant="primary" aria-label={t.ui.checkoutAria}>
+            <Button as="a" href={checkoutPath('valorant')} variant="primary" aria-label={t.ui.checkoutAria}>
               {
-                post.slug === 'battleye-fix'
-                  ? 'Checkout after BattlEye fix'
-                  : post.slug === 'r6-stream-proof'
-                    ? 'Buy stream-proof R6 tier'
-                    : post.slug === 'r6-practice-lobby'
-                      ? 'Checkout after Shooting Range drills'
-                      : post.slug === 'r6-radar'
+                post.slug === 'vanguard-verify-fix'
+                  ? 'Checkout after Vanguard fix'
+                  : post.slug === 'valorant-stream-proof'
+                    ? 'Buy stream-proof Valorant tier'
+                    : post.slug === 'valorant-range-practice'
+                      ? 'Checkout after practice range drills'
+                      : post.slug === 'valorant-minimap-radar'
                         ? 'Buy Lite radar hack tier'
-                        : post.slug === 'buy-r6-hacks'
-                          ? 'Start buy R6 checkout flow'
-                          : post.slug === 'battleye-patch'
+                        : post.slug === 'buy-valorant-hacks'
+                          ? 'Start Valorant checkout flow'
+                          : post.slug === 'vanguard-patch-checklist'
                             ? 'Checkout once loader status is green'
-                            : 'Buy R6 Hacks'
+                            : 'Buy Valorant Hacks'
               }
               <Icon name="arrowRight" size={17} />
             </Button>
             <Button as="a" href={ROUTES.products} variant="outline">
               {
-                post.slug === 'battleye-fix'
-                  ? 'Open R6 product catalog'
-                  : post.slug === 'r6-stream-proof'
+                post.slug === 'vanguard-verify-fix'
+                  ? 'Open Valorant product catalog'
+                  : post.slug === 'valorant-stream-proof'
                     ? 'Open stream-safe product hub'
-                    : post.slug === 'r6-practice-lobby'
+                    : post.slug === 'valorant-range-practice'
                       ? 'Compare Lite and Pro tiers'
-                      : post.slug === 'r6-radar'
-                        ? 'Open R6 product catalog (radar)'
-                        : post.slug === 'buy-r6-hacks'
+                      : post.slug === 'valorant-minimap-radar'
+                        ? 'Open Valorant product catalog (radar)'
+                        : post.slug === 'buy-valorant-hacks'
                           ? 'Browse tier pages before checkout'
-                          : post.slug === 'battleye-patch'
+                          : post.slug === 'vanguard-patch-checklist'
                             ? 'Open tier pages for post-patch reload'
                             : 'View products'
               }
             </Button>
             <Button as="a" href={ROUTES.blog} variant="outline">
               {
-                post.slug === 'battleye-fix'
+                post.slug === 'vanguard-verify-fix'
                   ? 'Browse patch-day guides'
-                  : post.slug === 'r6-stream-proof'
+                  : post.slug === 'valorant-stream-proof'
                     ? 'More OBS setup guides'
-                    : post.slug === 'r6-practice-lobby'
-                      ? 'More Shooting Range guides'
-                      : post.slug === 'r6-radar'
+                    : post.slug === 'valorant-range-practice'
+                      ? 'More practice range guides'
+                      : post.slug === 'valorant-minimap-radar'
                         ? 'More radar and ESP guides'
-                        : post.slug === 'buy-r6-hacks'
+                        : post.slug === 'buy-valorant-hacks'
                           ? 'More purchase and setup guides'
-                          : post.slug === 'battleye-patch'
-                            ? 'More BattlEye and loader guides'
+                          : post.slug === 'vanguard-patch-checklist'
+                            ? 'More Vanguard and loader guides'
                             : 'More articles'
               }
               <Icon name="arrowRight" size={17} />

@@ -5,8 +5,8 @@ import SiteBrandMark from './SiteBrandMark.astro';
 
 const resourceLinks = [
   { href: '/blog/', label: 'Blog archive', ariaLabel: 'Blog' },
-  { href: '/products/r6/elite/', label: 'Elite hacks', ariaLabel: 'Elite hacks' },
-  { href: '/products/r6/', label: 'Products & utilities', ariaLabel: 'Products' },
+  { href: '/products/valorant-cheats/elite/', label: 'Elite hacks', ariaLabel: 'Elite hacks' },
+  { href: '/products/valorant-cheats/', label: 'Products & utilities', ariaLabel: 'Products' },
   { href: '/support/', label: t.footer.support },
 ];
 
@@ -22,11 +22,11 @@ const onHomePage = normalizedPath === '/';
 const onAboutPage = normalizedPath === '/about';
 const onBlogPage = normalizedPath === '/blog';
 const onFaqPage = normalizedPath === '/faq';
-const onPracticeLobbyPost = normalizedPath === '/blog/r6-practice-lobby';
-const onStreamProofPost = normalizedPath === '/blog/r6-stream-proof';
-const onRadarPost = normalizedPath === '/blog/r6-radar';
+const onPracticeLobbyPost = normalizedPath === '/blog/valorant-range-practice';
+const onStreamProofPost = normalizedPath === '/blog/valorant-stream-proof';
+const onRadarPost = normalizedPath === '/blog/valorant-minimap-radar';
 const onForumPage = normalizedPath === '/forum';
-const onProductsR6Hub = normalizedPath === '/products/r6';
+const onProductsHub = normalizedPath === '/products/valorant-cheats';
 
 ---
 
@@ -62,16 +62,16 @@ const onProductsR6Hub = normalizedPath === '/products/r6';
           {resourceLinks.map((link) => (
             <li>
               <a href={link.href} class="text-sm text-muted-foreground hover:text-primary" aria-label={link.ariaLabel}>
-                {onProductsR6Hub && link.href === '/blog/'
-                  ? 'R6 catalog hub — patch setup guides'
-                  : onProductsR6Hub && link.href === '/support/'
-                    ? 'R6 catalog — loader and checkout support'
-                    : onProductsR6Hub && link.href === '/products/r6/elite/'
+                {onProductsHub && link.href === '/blog/'
+                  ? 'Valorant catalog hub — Vanguard setup guides'
+                  : onProductsHub && link.href === '/support/'
+                    ? 'Valorant catalog — loader and checkout support'
+                    : onProductsHub && link.href === '/products/valorant-cheats/elite/'
                       ? 'Elite tier listing from catalog hub'
-                      : onProductsR6Hub && link.href === '/products/r6/'
-                        ? 'R6 product catalog (you are here)'
+                      : onProductsHub && link.href === '/products/valorant-cheats/'
+                        ? 'Valorant product catalog (you are here)'
                         : onForumPage && link.href === '/blog/'
-                  ? 'Forum sidebar — R6 setup guides'
+                  ? 'Forum sidebar — Valorant setup guides'
                   : onPrivacyPage && link.href === '/support/'
                   ? 'Privacy questions — shop support'
                   : onHomePage && link.href === '/support/'
@@ -92,10 +92,10 @@ const onProductsR6Hub = normalizedPath === '/products/r6';
                               ? 'Radar hack guide — loader support'
                               : onRadarPost && link.href === '/blog/'
                                 ? 'Radar article hub — more setup guides'
-                                : onRadarPost && link.href === '/products/r6/elite/'
+                                : onRadarPost && link.href === '/products/valorant-cheats/elite/'
                                   ? 'Elite tier from radar guide sidebar'
-                                  : onRadarPost && link.href === '/products/r6/'
-                                    ? 'R6 shop linked from radar guide'
+                                  : onRadarPost && link.href === '/products/valorant-cheats/'
+                                    ? 'Valorant shop linked from radar guide'
                                     : onForumPage && link.href === '/support/'
                                       ? 'Forum page — loader and checkout support'
                                       : link.label}
@@ -111,7 +111,7 @@ const onProductsR6Hub = normalizedPath === '/products/r6';
           {legalLinks.map((link) => (
             <li>
               <a href={link.href} class="text-sm text-muted-foreground hover:text-primary">
-                {onForumPage && link.href === '/about/' ? 'Footer — about r6hacks.org' : link.label}
+                {onForumPage && link.href === '/about/' ? 'Footer — about hacksvalorant.com' : link.label}
               </a>
             </li>
           ))}

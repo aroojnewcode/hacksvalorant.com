@@ -271,6 +271,7 @@
 .forum-hero__intro { display:grid; gap:.45rem; min-width:0; max-width:42rem; }
 .forum-hero__intro .section-header__eyebrow { margin-bottom:.15rem; }
 .forum-hero__title { margin:0; font-family:var(--font-heading); font-size:clamp(1.85rem,3.8vw,2.65rem); line-height:1.08; font-weight:700; letter-spacing:-.025em; color:var(--foreground); }
+.forum-hero__title-note { display:block; margin-top:.28rem; font-size:.58em; font-weight:600; letter-spacing:0; line-height:1.25; color:var(--muted-foreground); }
 .forum-hero__lede { margin:.25rem 0 0; font-size:.88rem; font-weight:600; color:var(--foreground); }
 .forum-hero__copy { margin:.35rem 0 0; max-width:36rem; }
 @media(max-width:700px) { .forum-toolbar { flex-wrap:wrap; gap:.55rem; }.forum-search { order:2; width:100%; }.forum-sort { max-width:100%; overflow-x:auto; }.forum-sort button { flex:0 0 auto; white-space:nowrap; } }

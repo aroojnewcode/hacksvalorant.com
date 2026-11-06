@@ -22,7 +22,7 @@ const seoEntry = getPageSeoEntry(pagePath);
 const metaTitle = seoEntry?.title ?? pageTitle(`Buy ${product.title}`);
 const metaDescription =
   seoEntry?.description ??
-  `Buy ${product.title} R6 hacks — ${product.desc}`;
+  `Buy ${product.title} Valorant hacks — ${product.desc}`;
 const pageH1 = productPageH1(pagePath, product.title);
 const breadcrumbs = [
   { name: 'Home', path: '/' },
@@ -34,12 +34,15 @@ const breadcrumbs = [
 <BaseLayout
   title={metaTitle}
   description={metaDescription}
+  ogImage={product.images[0]?.src}
+  ogImageAlt={product.images[0]?.alt ?? product.title}
+  ogImageWidth={960}
+  ogImageHeight={540}
   jsonLd={[
     productSchema({
-      name: product.title,
+      name: pageH1,
       description: metaDescription,
       url: pagePath,
-      offerUrl: product.buyUrl,
       image: product.images[0]?.src,
       sku: product.slug,
     }),

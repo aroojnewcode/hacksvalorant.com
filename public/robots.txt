@@ -3,6 +3,6 @@ Allow: /
 
 Disallow: /go/
 
-Sitemap: https://r6hacks.org/sitemap.xml
+Sitemap: https://hacksvalorant.com/sitemap.xml
 
-# RSS: https://r6hacks.org/rss.xml
+# RSS: https://hacksvalorant.com/rss.xml

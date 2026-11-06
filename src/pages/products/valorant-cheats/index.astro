@@ -9,7 +9,7 @@ import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import CatalogCard from '../../../components/CatalogCard.astro';
 import { productPath } from '../../../utils/path';
 
-const seo = resolvePageSeo('/products/r6/');
+const seo = resolvePageSeo('/products/valorant-cheats/');
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Products', path: productHub.path },
@@ -54,17 +54,17 @@ function cardLabel(product: (typeof productPages)[number]) {
   <style slot="head" is:inline>
     @media (max-width: 639px) {
       :root {
-        --products-r6-rbp: phone;
+        --products-valorant-rbp: phone;
       }
     }
     @media (min-width: 640px) and (max-width: 1023px) {
       :root {
-        --products-r6-rbp: tablet;
+        --products-valorant-rbp: tablet;
       }
     }
     @media (min-width: 1024px) {
       :root {
-        --products-r6-rbp: desktop;
+        --products-valorant-rbp: desktop;
       }
     }
   </style>
@@ -75,13 +75,13 @@ function cardLabel(product: (typeof productPages)[number]) {
       <div class="mt-6 max-w-3xl space-y-3">
         <h1 class="text-3xl font-bold normal-case md:text-4xl">{seo.h1}</h1>
         <p class="text-lg text-muted-foreground">
-          Buy R6 PC hacks in our Rainbow Six Siege shop — Lite, Pro and Elite tiers with Elite aimbot &amp; wall ESP, HWID
-          spoofer, UGC recovery and Loadout Changer. Instant delivery after checkout.
+          Buy Valorant PC hacks at hacksvalorant.com — Lite, Pro and Elite tiers with aim assist &amp; wall ESP, HWID
+          spoofer, UGC recovery and skin preview tools. Instant delivery after checkout.
         </p>
       </div>
 
-      <section class="mt-10" aria-labelledby="r6-tier-products-heading">
-        <h2 id="r6-tier-products-heading" class="text-xl font-semibold">Lite, Pro and Elite hack tiers</h2>
+      <section class="mt-10" aria-labelledby="valorant-tier-products-heading">
+        <h2 id="valorant-tier-products-heading" class="text-xl font-semibold">Lite, Pro and Elite hack tiers</h2>
         <div class="mt-6 grid min-w-0 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 [&>*]:min-w-0">
           {tierProducts.map((product) => (
             <CatalogCard
@@ -101,8 +101,8 @@ function cardLabel(product: (typeof productPages)[number]) {
         </div>
       </section>
 
-      <section class="mt-12" aria-labelledby="r6-utility-products-heading">
-        <h2 id="r6-utility-products-heading" class="text-xl font-semibold">HWID spoofer, UGC and loadout utilities</h2>
+      <section class="mt-12" aria-labelledby="valorant-utility-products-heading">
+        <h2 id="valorant-utility-products-heading" class="text-xl font-semibold">HWID spoofer, UGC and cosmetic utilities</h2>
         <div class="mt-6 grid min-w-0 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 [&>*]:min-w-0">
           {utilityProducts.map((product) => (
             <CatalogCard

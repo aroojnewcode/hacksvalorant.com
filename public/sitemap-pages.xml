@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://r6hacks.org/</loc>
+    <loc>https://hacksvalorant.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://r6hacks.org/about/</loc>
+    <loc>https://hacksvalorant.com/about/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://r6hacks.org/faq/</loc>
+    <loc>https://hacksvalorant.com/faq/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://r6hacks.org/privacy/</loc>
+    <loc>https://hacksvalorant.com/forum/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hacksvalorant.com/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://r6hacks.org/r6-hacks/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://r6hacks.org/support/</loc>
+    <loc>https://hacksvalorant.com/support/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://r6hacks.org/terms/</loc>
+    <loc>https://hacksvalorant.com/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

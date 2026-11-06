@@ -12,6 +12,9 @@ import { breadcrumbSchema, collectionPageSchema } from '../../utils/schema';
 const forumLogoAlt = footerLogoAltForPath('/forum/');
 
 const seo = resolvePageSeo('/forum/');
+const forumH1 = seo.h1 ?? 'Valorant hacks forum — loader, tiers and guides';
+const [forumH1Main, ...forumH1Rest] = forumH1.split(/\s+[—–-]\s+/);
+const forumH1Note = forumH1Rest.join(' — ');
 const breadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Forum', path: '/forum/' }];
 const categoryKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '');
 const sourceTimestamp = (path?: string) => {
@@ -49,11 +52,11 @@ const sourceTimestamp = (path?: string) => {
       <header class="forum-hero">
         <div class="forum-hero__intro">
           <p class="section-header__eyebrow">Community forum</p>
-          <h1 class="forum-hero__title">{seo.h1 ?? 'Forum for loader setup and product help'}</h1>
+          <h1 class="forum-hero__title">{forumH1Main}{forumH1Note && <span class="forum-hero__title-note">{forumH1Note}</span>}</h1>
           <p class="forum-hero__lede">Forum discussions by topic</p>
           <p class="forum-hero__copy">Practical answers on loader setup, aimbot configs, patch updates, and weapon loadouts.</p>
         </div>
-        <a class="forum-create" href="/blog/"><Icon name="messageCircle" size={17} /> R6 hack guides from the blog</a>
+        <a class="forum-create" href="/blog/"><Icon name="messageCircle" size={17} /> Valorant hack guides from the blog</a>
       </header>
 
       <div class="forum-layout">
@@ -90,9 +93,9 @@ const sourceTimestamp = (path?: string) => {
                   <div class="forum-post-meta">
                     <span class={`forum-community-avatar tone-${post.categoryTone}`}><Icon name="users" size={15} /></span>
                     <span class="forum-community-name">d/{post.category.toLowerCase().replaceAll(/[^a-z0-9]/g, '')}</span>
-                    <span>·</span><span><Icon name="userRound" size={13} /> R6 Hacks guide team</span><span>Guide-based Q&amp;A</span>
+                    <span>·</span><span><Icon name="userRound" size={13} /> Valorant Hacks guide team</span><span>Guide-based Q&amp;A</span>
                   </div>
-                  <a class="forum-post-title" href={`/forum/${post.slug}/`}>{post.title}</a>
+                  <a class="forum-post-title" href={post.sourcePath ?? '/blog/'}>{post.title}</a>
                   <p class="forum-post-excerpt">{post.excerpt}</p>
                   {
                     post.sourceTitle && (
@@ -104,14 +107,8 @@ const sourceTimestamp = (path?: string) => {
                   }
                   <div class="forum-post-actions">
                     {post.flair && <span class={`forum-flair tone-${post.categoryTone}`}>{post.flair}</span>}
-                    <a class="forum-post-comments" href={`/forum/${post.slug}/#comments`}>
-                      <Icon name="messageCircle" size={15} />
-                      {post.commentsCount === 1
-                        ? `1 comment on ${post.slug}`
-                        : `${post.commentsCount} comments on ${post.slug}`}
-                    </a>
-                    <a class="forum-post-read" href={`/forum/${post.slug}/`}>
-                      Open {post.slug.replace(/-/g, ' ')} thread <Icon name="arrowRight" size={14} />
+                    <a class="forum-post-read" href={post.sourcePath ?? '/blog/'}>
+                      Read the guide <Icon name="arrowRight" size={14} />
                     </a>
                   </div>
                 </div>
@@ -135,11 +132,11 @@ const sourceTimestamp = (path?: string) => {
                 <span class="forum-community-avatar forum-community-avatar--brand" aria-hidden="true">
                   <img src="/logo.svg" alt={forumLogoAlt} width="34" height="34" />
                 </span>
-                <p id="forum-about-heading" class="forum-about__community-name">R6 Hacks Community</p>
+                <p id="forum-about-heading" class="forum-about__community-name">Valorant Hacks Community</p>
               </div>
-              <p>A home for Rainbow Six Siege players to trade ideas, learn together, and celebrate the game.</p>
+              <p>A home for Valorant players to trade ideas on loader setup, Vanguard updates, and competitive play.</p>
               <div class="forum-stats"><span><b>{forumPosts.length}</b> guide discussions</span><span><b>{forumCategories.length}</b> topics</span></div>
-              <a class="forum-join" href="/blog/">Browse every R6 setup guide</a>
+              <a class="forum-join" href="/blog/">Browse every Valorant setup guide</a>
             </div>
           </section>
           <section class="forum-side-card" id="communities">
@@ -159,7 +156,7 @@ const sourceTimestamp = (path?: string) => {
             <a href="#community-guidelines">Forum community guidelines (full) <Icon name="arrowRight" size={14} /></a>
           </section>
           <p class="forum-sidebar-foot">
-            <a href="/about/">About r6hacks.org</a>
+            <a href="/about/">About hacksvalorant.com</a>
             <span aria-hidden="true"> · </span>
             <a href="#community-guidelines">Guidelines</a>
             <span aria-hidden="true"> · </span>
@@ -167,7 +164,7 @@ const sourceTimestamp = (path?: string) => {
             <span aria-hidden="true"> · </span>
             <a href="/terms/">Terms</a>
             <br />
-            © {new Date().getFullYear()} R6 Hacks Community
+            © {new Date().getFullYear()} Valorant Hacks Community
           </p>
         </aside>
       </div>

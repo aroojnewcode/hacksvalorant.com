@@ -33,18 +33,6 @@
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
 
-/sitemap-index.xml
-  Content-Type: application/xml; charset=utf-8
-  Cache-Control: public, max-age=86400
-
-/sitemap-0.xml
-  Content-Type: application/xml; charset=utf-8
-  Cache-Control: public, max-age=86400
-
-/sitemap-all.xml
-  Content-Type: application/xml; charset=utf-8
-  Cache-Control: public, max-age=86400
-
 /sitemap-pages.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400
@@ -54,9 +42,5 @@
   Cache-Control: public, max-age=86400
 
 /sitemap-blog.xml
-  Content-Type: application/xml; charset=utf-8
-  Cache-Control: public, max-age=86400
-
-/sitemap-forum.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=86400

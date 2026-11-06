@@ -9,7 +9,7 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 /** URL slug for /go/[slug]/ checkout redirect pages. */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
-  r6: 'r6',
+  valorant: 'valorant',
   skinChanger: 'skin-changer',
   hwidSpoofer: 'hwid-spoofer',
   ugc: 'ugc',
@@ -20,16 +20,16 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
 ) as Record<string, CheckoutProduct>;
 
 /** All Buy now / checkout CTAs use the same Zadeyo go link. */
-export function checkoutPath(_product: CheckoutProduct = 'r6'): string {
-  return CHECKOUT.r6;
+export function checkoutPath(_product: CheckoutProduct = 'valorant'): string {
+  return CHECKOUT.valorant;
 }
 
 /** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('r6');
+export const PRIMARY_CHECKOUT_PATH = checkoutPath('valorant');
 
 /** Map internal product slugs to checkout (single Zadeyo destination). */
 export function checkoutForSlug(_slug: string): string {
-  return CHECKOUT.r6;
+  return CHECKOUT.valorant;
 }
 
 /** Resolve blog CTA or legacy href values to internal checkout paths. */
@@ -39,7 +39,7 @@ export function resolveCheckoutHref(href: string): string {
   if (!href.startsWith('http')) {
     const normalized = href.startsWith('/') ? href : `/${href}`;
     if (GO_CHECKOUT_PATH.test(normalized)) {
-      return CHECKOUT.r6;
+      return CHECKOUT.valorant;
     }
     return normalized;
   }
@@ -52,7 +52,7 @@ export function resolveCheckoutHref(href: string): string {
 
   // Legacy / encoded product paths → internal checkout
   if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
-    return checkoutPath('r6');
+    return checkoutPath('valorant');
   }
   if (href.includes('%2Fproducts%2Fskin-changer') || href.includes('/products/skin-changer')) {
     return checkoutPath('skinChanger');
@@ -65,14 +65,14 @@ export function resolveCheckoutHref(href: string): string {
   }
   if (
     href.includes('zadeyo.com/go/') ||
-    href.includes('%2Fr6-hacks') ||
-    href.includes('/r6-hacks') ||
+    href.includes('%2Fvalorant-hacks') ||
+    href.includes('/valorant-hacks') ||
     href.includes('%2Fproducts%2Frainbow-six-siege') ||
     href.includes('%2Fproducts%2Frainbow-six-siege-hacks') ||
     href.includes('/products/rainbow-six-siege') ||
     href.includes('/products/mw4')
   ) {
-    return checkoutPath('r6');
+    return checkoutPath('valorant');
   }
 
   return href;

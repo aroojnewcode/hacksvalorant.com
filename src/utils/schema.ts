@@ -25,11 +25,13 @@ export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'R6 Hacks',
+    '@id': `${SITE_ORIGIN}/#website`,
+    name: 'Valorant Hacks',
     url: `${SITE_ORIGIN}/`,
+    publisher: { '@id': `${SITE_ORIGIN}/#organization` },
     inLanguage: 'en-US',
     description:
-      'R6 hacks with aimbot, ESP, and radar hack, Operator loadout tools and ranked-safe tiers for PC.',
+      'Valorant hacks with aim assist, ESP, radar-style overlays, skin preview tools and competitive-ready tiers for PC.',
   };
 }
 
@@ -39,7 +41,8 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'R6 Hacks',
+    '@id': `${SITE_ORIGIN}/#organization`,
+    name: 'Valorant Hacks',
     url: `${SITE_ORIGIN}/`,
     logo: `${SITE_ORIGIN}/logo.svg`,
     email: SUPPORT_EMAIL,
@@ -65,11 +68,7 @@ export function collectionPageSchema(input: { name: string; description: string;
     description: input.description,
     url: canonicalUrl(input.url),
     inLanguage: 'en-US',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'R6 Hacks',
-      url: `${SITE_ORIGIN}/`,
-    },
+    isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
   };
 }
 
@@ -81,11 +80,7 @@ export function webPageSchema(input: { name: string; description: string; url: s
     description: input.description,
     url: canonicalUrl(input.url),
     inLanguage: 'en-US',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'R6 Hacks',
-      url: `${SITE_ORIGIN}/`,
-    },
+    isPartOf: { '@id': `${SITE_ORIGIN}/#website` },
   };
 }
 
@@ -117,58 +112,55 @@ export function itemListSchema(items: { name: string; url: string }[]) {
   };
 }
 
-export function discussionForumPostingSchema(input: { name: string; text: string; url: string }) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'DiscussionForumPosting',
-    headline: input.name,
-    articleBody: input.text,
-    url: canonicalUrl(input.url),
-    isPartOf: { '@type': 'CollectionPage', name: 'R6 Hacks Forum', url: canonicalUrl('/forum/') },
-  };
-}
-
-function offerUrl(path: string): string {
-  if (path.startsWith('http://') || path.startsWith('https://')) return path;
-  return canonicalUrl(path);
-}
-
 export function productSchema(input: {
   name: string;
   description: string;
   url: string;
-  offerUrl: string;
   image?: string;
   sku?: string;
-  /** Defaults to Zadeyo Monthly ($35) and Lifetime ($150) only. */
+  /** Defaults to monthly $35 and lifetime $150. Offer URL is this product page. */
   plans?: ReturnType<typeof getProductPlans>;
 }) {
   const plans = input.plans ?? getProductPlans();
-  const checkout = offerUrl(input.offerUrl);
+  const prices = plans.map((plan) => plan.priceUsd);
+  const low = Math.min(...prices);
+  const high = Math.max(...prices);
+  const pageUrl = canonicalUrl(input.url);
+  const seller = { '@id': `${SITE_ORIGIN}/#organization` };
+  const offers =
+    prices.length <= 1
+      ? {
+          '@type': 'Offer',
+          price: low.toFixed(2),
+          priceCurrency: 'USD',
+          url: pageUrl,
+          availability: 'https://schema.org/InStock',
+          seller,
+        }
+      : {
+          '@type': 'AggregateOffer',
+          lowPrice: low.toFixed(2),
+          highPrice: high.toFixed(2),
+          priceCurrency: 'USD',
+          offerCount: prices.length,
+          url: pageUrl,
+          availability: 'https://schema.org/InStock',
+          seller,
+        };
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `${pageUrl}#product`,
     name: input.name,
     description: input.description,
     sku: input.sku ?? input.url.replace(/\//g, '-'),
     brand: {
       '@type': 'Brand',
-      name: 'R6 Hacks',
+      name: 'Valorant Hacks',
     },
     ...(input.image ? { image: absoluteAssetUrl(input.image) } : {}),
-    offers: plans.map((plan) => ({
-      '@type': 'Offer',
-      name: `${plan.label} — ${plan.duration}`,
-      price: plan.priceUsd.toFixed(2),
-      priceCurrency: 'USD',
-      url: checkout,
-      availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'Organization',
-        name: 'R6 Hacks',
-      },
-    })),
+    offers,
   };
 }
 
@@ -184,7 +176,6 @@ export function softwareApplicationSchema(input: {
     name: input.name,
     description: input.description,
     url: input.url,
-    offerUrl: input.offerUrl ?? input.url,
     image: input.image,
   });
 }
@@ -209,16 +200,9 @@ export function articleSchema(input: {
     inLanguage: 'en-US',
     author: {
       '@type': 'Organization',
-      name: 'R6 Hacks',
+      name: 'Valorant Hacks',
     },
-    publisher: {
-      '@type': 'Organization',
-      name: 'R6 Hacks',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_ORIGIN}/logo.svg`,
-      },
-    },
+    publisher: { '@id': `${SITE_ORIGIN}/#organization` },
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': canonicalUrl(input.url),

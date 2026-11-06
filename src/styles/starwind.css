@@ -74,88 +74,87 @@
 }
 
 :root {
-  /* Levo-aligned tones: Outfit + electric blue on charcoal surfaces */
+  /* Valorant-inspired purple theme: Outfit + violet on light surfaces */
   --font-sans: "Outfit", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
   --font-heading: "Outfit", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
-  --background: #ffffff;
-  --foreground: #0a0a0a;
+  --background: #faf8ff;
+  --foreground: #0f0a1a;
   --card: #ffffff;
-  --card-foreground: #0a0a0a;
+  --card-foreground: #0f0a1a;
   --popover: #ffffff;
-  --popover-foreground: #0a0a0a;
-  --primary: #2d6ee2;
+  --popover-foreground: #0f0a1a;
+  --primary: #6d28d9;
   --primary-foreground: #ffffff;
-  --primary-accent: #5a8ff0;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #0a0a0a;
-  --secondary-accent: #0a0a0a;
-  --muted: #f4f4f5;
-  --muted-foreground: #52525b;
-  --accent: #f4f4f5;
-  --accent-foreground: #0a0a0a;
-  --info: #5a8ff0;
-  --info-foreground: #061428;
-  --success: #3dd68c;
-  --success-foreground: #052e1a;
-  --warning: #5a8ff0;
-  --warning-foreground: #061428;
-  --error: #2d6ee2;
+  --primary-accent: #8b5cf6;
+  --secondary: #f3e8ff;
+  --secondary-foreground: #0f0a1a;
+  --secondary-accent: #4c1d95;
+  --muted: #f3e8ff;
+  --muted-foreground: #5b21b6;
+  --accent: #ede9fe;
+  --accent-foreground: #0f0a1a;
+  --info: #7c3aed;
+  --info-foreground: #1e1033;
+  --success: #059669;
+  --success-foreground: #ecfdf5;
+  --warning: #a78bfa;
+  --warning-foreground: #1e1033;
+  --error: #7c3aed;
   --error-foreground: #ffffff;
-  --border: #d8dde8;
-  --input: #d8dde8;
-  --outline: #8b90a0;
+  --border: #e9d5ff;
+  --input: #e9d5ff;
+  --outline: #7e69b3;
   --radius: 0.625rem;
 
   /* sidebar variables */
   --sidebar-background: #ffffff;
-  --sidebar-foreground: #0a0a0a;
-  --sidebar-primary: #2d6ee2;
+  --sidebar-foreground: #0f0a1a;
+  --sidebar-primary: #6d28d9;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f4f4f5;
-  --sidebar-accent-foreground: #0a0a0a;
-  --sidebar-border: #d8dde8;
-  --sidebar-outline: #6b6d7b;
+  --sidebar-accent: #f3e8ff;
+  --sidebar-accent-foreground: #0f0a1a;
+  --sidebar-border: #e9d5ff;
+  --sidebar-outline: #6d28d9;
 }
 
 .dark {
-  --background: #0b1018;
-  --foreground: #ffffff;
-  --card: #121a28;
-  --card-foreground: #ffffff;
-  --popover: #0c1420;
-  --popover-foreground: #ffffff;
-  --primary: #2d6ee2;
-  --primary-foreground: #ffffff;
-  --primary-accent: #5a8ff0;
-  --secondary: #161a24;
-  --secondary-foreground: #ffffff;
-  --secondary-accent: #ffffff;
-  --muted: #161a24;
-  --muted-foreground: #a8b0c0;
-  --accent: #1a2030;
-  --accent-foreground: #ffffff;
-  --info: #5a8ff0;
-  --info-foreground: #061428;
-  --success: #3dd68c;
+  --background: #0c0618;
+  --foreground: #faf5ff;
+  --card: #150a24;
+  --card-foreground: #faf5ff;
+  --popover: #120820;
+  --popover-foreground: #faf5ff;
+  --primary: #8b5cf6;
+  --primary-foreground: #0f0a1a;
+  --primary-accent: #c4b5fd;
+  --secondary: #1e1033;
+  --secondary-foreground: #faf5ff;
+  --secondary-accent: #ddd6fe;
+  --muted: #1e1033;
+  --muted-foreground: #c4b5fd;
+  --accent: #2e1065;
+  --accent-foreground: #faf5ff;
+  --info: #a78bfa;
+  --info-foreground: #0f0a1a;
+  --success: #34d399;
   --success-foreground: #052e1a;
-  /* Keep “warning” on-brand blue (no amber/red cast in badges/boxes) */
-  --warning: #5a8ff0;
-  --warning-foreground: #061428;
-  --error: #3b82f6;
+  --warning: #a78bfa;
+  --warning-foreground: #0f0a1a;
+  --error: #7c3aed;
   --error-foreground: #ffffff;
-  --border: #1e2533;
-  --input: #243044;
-  --outline: #6b7a94;
+  --border: #3b2667;
+  --input: #2e1065;
+  --outline: #a78bfa;
 
   /* sidebars variables */
-  --sidebar-background: #0c1018;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #2d6ee2;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #161a24;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1e2533;
-  --sidebar-outline: #6b7a94;
+  --sidebar-background: #0f0820;
+  --sidebar-foreground: #faf5ff;
+  --sidebar-primary: #8b5cf6;
+  --sidebar-primary-foreground: #0f0a1a;
+  --sidebar-accent: #1e1033;
+  --sidebar-accent-foreground: #faf5ff;
+  --sidebar-border: #3b2667;
+  --sidebar-outline: #a78bfa;
 }
 
 @layer base {

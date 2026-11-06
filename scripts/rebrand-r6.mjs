@@ -1,5 +1,5 @@
 /**
- * MW4 Hack → R6 Hacks rebrand for r6hacks.org
+ * MW4 Hack → R6 Hacks rebrand for hacksvalorant.com
  * Run from project root: node scripts/rebrand-r6.mjs
  */
 import fs from 'node:fs';
@@ -38,7 +38,7 @@ const REPLACEMENTS = [
   ['%2Fproducts%2Fborderlands-3', R6_CHECKOUT_ENCODED],
   ['%2Fproducts%2Fbodycam', R6_CHECKOUT_ENCODED],
 
-  ['mw4hack.org', 'r6hacks.org'],
+  ['mw4hack.org', 'hacksvalorant.com'],
   ['mw4hack-org', 'r6hacks-org'],
   ['Mw4Hack', 'R6Hacks'],
   ['Mw4hack', 'R6hacks'],
@@ -46,18 +46,18 @@ const REPLACEMENTS = [
 
   ['/products/mw4-hacks', '/products/r6-hacks'],
   ['products/mw4-hacks', 'products/r6-hacks'],
-  ['/mw4-hacks/', '/r6-hacks/'],
+  ['/mw4-hacks/', '/valorant-hacks/'],
   ['/mw4-hacks', '/r6-hacks'],
   ['mw4-hacks/', 'r6-hacks/'],
   ['mw4-hacks', 'r6-hacks'],
 
-  ['/go/mw4/', '/go/r6/'],
+  ['/go/mw4/', '/go/valorant/'],
   ['/go/mw4', '/go/r6'],
-  ['/go/borderlands/', '/go/r6/'],
+  ['/go/borderlands/', '/go/valorant/'],
   ['/go/borderlands', '/go/r6'],
-  ['/go/bodycam/', '/go/r6/'],
+  ['/go/bodycam/', '/go/valorant/'],
   ['/go/bodycam', '/go/r6'],
-  ['/go/fortnite/', '/go/r6/'],
+  ['/go/fortnite/', '/go/valorant/'],
   ['/go/fortnite', '/go/r6'],
 
   ["checkoutPath('mw4')", "checkoutPath('r6')"],
@@ -92,7 +92,7 @@ const REPLACEMENTS = [
   ['mw4-', 'r6-'],
 
   ["TITLE_PREFIX = 'R6 Hacks'", "TITLE_PREFIX = 'R6 Hacks'"],
-  ['PRODUCT_BASE = \'/products/mw4-hacks/\'', "PRODUCT_BASE = '/products/r6/'"],
+  ['PRODUCT_BASE = \'/products/mw4-hacks/\'', "PRODUCT_BASE = '/products/valorant-cheats/'"],
   ['FAVICON_VERSION = \'m2026\'', "FAVICON_VERSION = 'r6-2026'"],
 ];
 

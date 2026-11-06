@@ -4,8 +4,6 @@ import {
   absoluteAssetUrl,
   canonicalUrl,
   DEFAULT_OG_IMAGE,
-  DEFAULT_OG_IMAGE_HEIGHT,
-  DEFAULT_OG_IMAGE_WIDTH,
   SITE_ORIGIN,
 } from '../config/seo';
 import { FAVICON_VERSION } from '../config/site';
@@ -17,21 +15,32 @@ interface Props {
   logoAlt?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, logoAlt, ogImage, ogImageAlt, jsonLd } = Astro.props;
+const {
+  title,
+  description,
+  logoAlt,
+  ogImage,
+  ogImageAlt,
+  ogImageWidth = 960,
+  ogImageHeight = 540,
+  jsonLd,
+} = Astro.props;
 const canonical = canonicalUrl(Astro.url.pathname, SITE_ORIGIN);
 const ogImageUrl = absoluteAssetUrl(ogImage ?? DEFAULT_OG_IMAGE);
 const shareImageAlt = ogImageAlt ?? title;
 
 const navLinks = [
-  { href: '/', label: 'r6hacks.org home' },
-  { href: '/products/r6/', label: 'Browse R6 product catalog' },
-  { href: '/blog/', label: 'Read R6 setup guides' },
+  { href: '/', label: 'hacksvalorant.com home' },
+  { href: '/products/valorant-cheats/', label: 'Browse Valorant product catalog' },
+  { href: '/blog/', label: 'Read Valorant setup guides' },
   { href: '/faq/', label: 'Pre-purchase FAQ' },
   { href: '/support/', label: 'Checkout support desk' },
-  { href: '/forum/', label: 'R6 community forum' },
+  { href: '/forum/', label: 'Valorant community forum' },
 ];
 ---
 
@@ -51,16 +60,14 @@ const navLinks = [
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:secure_url" content={ogImageUrl} />
     <meta property="og:image:alt" content={shareImageAlt} />
-    <meta property="og:image:width" content={String(DEFAULT_OG_IMAGE_WIDTH)} />
-    <meta property="og:image:height" content={String(DEFAULT_OG_IMAGE_HEIGHT)} />
+    <meta property="og:image:width" content={String(ogImageWidth)} />
+    <meta property="og:image:height" content={String(ogImageHeight)} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={shareImageAlt} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={canonical} />
-    <link rel="alternate" hreflang="en-US" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={canonical} />
     {jsonLd && <JsonLd data={jsonLd} />}
     <link rel="icon" type="image/svg+xml" href={`/favicon.svg?v=${FAVICON_VERSION}`} />
@@ -70,8 +77,8 @@ const navLinks = [
     <header class="border-b border-border bg-muted/20">
       <div class="mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-4 px-5 py-4">
         <a href="/" class="inline-flex items-center gap-2 font-bold">
-          <img src="/logo.svg" width="32" height="32" alt={logoAlt ?? 'R6 Hacks logo'} />
-          <span class="text-sm">R6 Hacks checkout</span>
+          <img src="/logo.svg" width="32" height="32" alt={logoAlt ?? 'Valorant Hacks logo'} />
+          <span class="text-sm">Valorant Hacks checkout</span>
         </a>
         <nav class="flex flex-wrap gap-x-4 gap-y-1 text-sm" aria-label="Checkout bridge">
           {navLinks.map((link) => (

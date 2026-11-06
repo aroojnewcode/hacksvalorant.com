@@ -1,15 +1,14 @@
 ---
 import CheckoutBridgeLayout from '../../../layouts/CheckoutBridgeLayout.astro';
 import {
-  ZADEYO_R6_CHECKOUT_URL,
-  ZADEYO_R6_PRODUCT_SEO,
-} from '../../../config/zadeyoR6ProductSeo';
-import { productSchema } from '../../../utils/schema';
+  ZADEYO_VALORANT_CHECKOUT_URL,
+  ZADEYO_VALORANT_PRODUCT_SEO,
+} from '../../../config/zadeyoValorantProductSeo';
 import { PRIMARY_CHEAT_IMAGE } from '../../../config/siteImages';
 import { Button } from '@/components/starwind/button';
 
-const seo = ZADEYO_R6_PRODUCT_SEO;
-const capsuleAlt = 'Rainbow Six Siege Steam library capsule art';
+const seo = ZADEYO_VALORANT_PRODUCT_SEO;
+const capsuleAlt = 'Valorant — competitive tactical shooter artwork';
 const headingFor = (key: (typeof seo.bodySections)[number]['headingKey']) => seo[key];
 ---
 
@@ -18,15 +17,7 @@ const headingFor = (key: (typeof seo.bodySections)[number]['headingKey']) => seo
   description={seo.description}
   logoAlt={seo.logoAlt}
   ogImage={PRIMARY_CHEAT_IMAGE}
-  ogImageAlt="Rainbow Six Siege PC ranked match — R6 Hacks checkout preview"
-  jsonLd={[
-    productSchema({
-      name: seo.h1,
-      description: seo.description,
-      url: '/go/r6/',
-      offerUrl: ZADEYO_R6_CHECKOUT_URL,
-    }),
-  ]}
+  ogImageAlt="Valorant PC ranked match — Valorant Hacks checkout preview"
 >
   <style slot="head" is:inline>
     @media (max-width: 639px) {
@@ -50,7 +41,7 @@ const headingFor = (key: (typeof seo.bodySections)[number]['headingKey']) => seo
       <p class="text-xs font-semibold uppercase tracking-wider text-muted-foreground">ZADEYO · PC multiplayer</p>
       <h1 class="text-3xl font-bold leading-tight md:text-4xl">{seo.h1}</h1>
       <p class="text-lg leading-relaxed text-muted-foreground">{seo.intro}</p>
-      <Button as="a" href={ZADEYO_R6_CHECKOUT_URL} variant="primary" size="lg" class="mt-2">
+      <Button as="a" href={ZADEYO_VALORANT_CHECKOUT_URL} variant="primary" size="lg" class="mt-2">
         Open ZADEYO secure checkout
       </Button>
     </header>
@@ -70,7 +61,7 @@ const headingFor = (key: (typeof seo.bodySections)[number]['headingKey']) => seo
       <h2 id="product-details-title" class="text-xl font-semibold">{seo.h2ProductDetails}</h2>
       <p class="text-muted-foreground">
         Compare modules on{' '}
-        <a href="/products/r6/" class="text-primary hover:underline">r6hacks.org R6 product catalog</a>
+        <a href="/products/valorant-cheats/" class="text-primary hover:underline">hacksvalorant.com product catalog</a>
         before you continue. Checkout and license delivery run on ZADEYO with secure payment and instant digital access.
       </p>
     </section>
@@ -87,8 +78,8 @@ const headingFor = (key: (typeof seo.bodySections)[number]['headingKey']) => seo
       ))}
       <ul class="list-disc space-y-2 pl-5 text-muted-foreground">
         <li>Configurable aimbot FOV, smoothness, and hitbox selection.</li>
-        <li>Player ESP, skeleton types, snaplines, and gadget ESP lists.</li>
-        <li>Save and load config profiles for ranked and unranked playlists.</li>
+        <li>Player ESP, skeleton types, snaplines, and ability ESP callouts.</li>
+        <li>Save and load config profiles for competitive and unrated playlists.</li>
       </ul>
     </section>
 
@@ -101,8 +92,8 @@ const headingFor = (key: (typeof seo.bodySections)[number]['headingKey']) => seo
 
     {
       seo.bodySections.map((block) => (
-        <section class="mt-8 space-y-3" aria-labelledby={`go-r6-${block.id}`}>
-          <h2 id={`go-r6-${block.id}`} class="text-xl font-semibold">
+        <section class="mt-8 space-y-3" aria-labelledby={`go-valorant-${block.id}`}>
+          <h2 id={`go-valorant-${block.id}`} class="text-xl font-semibold">
             {headingFor(block.headingKey)}
           </h2>
           {block.paragraphs.map((paragraph) => (
@@ -116,7 +107,7 @@ const headingFor = (key: (typeof seo.bodySections)[number]['headingKey']) => seo
       <h2 id="checkout-help-title" class="text-lg font-semibold">Before you buy</h2>
       <p class="text-muted-foreground">
         Read the{' '}
-        <a href="/faq/" class="text-primary hover:underline">FAQ on loader setup and BattlEye checks</a>
+        <a href="/faq/" class="text-primary hover:underline">FAQ on loader setup and Vanguard checks</a>
         or open the{' '}
         <a href="/support/" class="text-primary hover:underline">support desk for checkout help</a>.
       </p>

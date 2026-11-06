@@ -7,7 +7,7 @@ const HSTS_VALUE = 'max-age=31536000; includeSubDomains; preload';
 
 function withSecurityHeaders(headers, url) {
   const host = url.hostname.toLowerCase();
-  if (url.protocol === 'https:' && (host === 'r6hacks.org' || host.endsWith('.workers.dev'))) {
+  if (url.protocol === 'https:' && (host === 'hacksvalorant.com' || host.endsWith('.workers.dev'))) {
     headers.set('strict-transport-security', HSTS_VALUE);
   }
   return headers;
@@ -18,10 +18,10 @@ function trailingSlashPath(pathname) {
   return pathname.endsWith('/') ? pathname : `${pathname}/`;
 }
 
-/** Production uses r6hacks.org; Workers preview uses self-origin so audits match the crawl host. */
+/** Production uses hacksvalorant.com; Workers preview uses self-origin so audits match the crawl host. */
 function seoOrigin(url) {
   const host = url.hostname.toLowerCase();
-  if (host === 'r6hacks.org' || host === 'www.r6hacks.org') return CANONICAL_ORIGIN;
+  if (host === 'hacksvalorant.com' || host === 'www.hacksvalorant.com') return CANONICAL_ORIGIN;
   if (host.endsWith('.workers.dev')) return url.origin;
   return CANONICAL_ORIGIN;
 }
@@ -35,14 +35,14 @@ function rewriteRobotsTxt(text, url) {
   const base = originBase(url);
   return text
     .replace(/^Sitemap:\s+\/(\S+)/gm, (_line, path) => `Sitemap: ${base}/${path}`)
-    .replace(/# RSS: https:\/\/r6hacks\.org\/rss\.xml/, `# RSS: ${base}/rss.xml`);
+    .replace(/# RSS: https:\/\/(?:r6hacks\.org|hacksvalorant\.com)\/rss\.xml/, `# RSS: ${base}/rss.xml`);
 }
 
 /** Sitemap index/urlset: on Workers preview, child <loc> must match the crawl host. */
 function rewriteSitemapXml(text, url) {
   const base = originBase(url);
   if (base === CANONICAL_ORIGIN.replace(/\/$/, '')) return text;
-  return text.replace(/https:\/\/r6hacks\.org/g, base);
+  return text.replace(/https:\/\/(?:r6hacks\.org|hacksvalorant\.com)/g, base);
 }
 
 function rewriteHtmlSeoUrls(html, url) {
@@ -136,7 +136,7 @@ export default {
     let body = rewriteHtmlSeoUrls(html, url);
     const base = originBase(url);
     if (base !== CANONICAL_ORIGIN.replace(/\/$/, '')) {
-      body = body.replace(/https:\/\/r6hacks\.org/g, base);
+      body = body.replace(/https:\/\/(?:r6hacks\.org|hacksvalorant\.com)/g, base);
     }
     const headers = new Headers(response.headers);
     headers.delete('content-length');

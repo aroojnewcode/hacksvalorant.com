@@ -61,4 +61,4 @@ for (const [name, size] of Object.entries(files)) {
 const ico = encodeIco([await png(16), await png(32), await png(48)]);
 fs.writeFileSync(path.join(publicDir, 'favicon.ico'), ico);
 
-console.log('Brand icons generated from favicon.svg (letter M).');
+console.log('Brand icons generated from favicon.svg (letter V).');

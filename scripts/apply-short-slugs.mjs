@@ -7,8 +7,8 @@ import path from 'node:path';
 const root = process.cwd();
 
 const REPLACEMENTS = [
-  ['/products/r6-hacks/', '/products/r6/'],
-  ['products/r6-hacks/', 'products/r6/'],
+  ['/products/valorant-hacks/', '/products/valorant-cheats/'],
+  ['products/valorant-hacks/', 'products/r6/'],
 
   ['r6-hacks-features-guide', 'r6-features'],
   ['r6-hack-codes-guide', 'r6-practice-lobby'],

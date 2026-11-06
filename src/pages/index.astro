@@ -6,7 +6,7 @@ import ProductsSection from '../components/ProductsSection.astro';
 import ContentSections from '../components/ContentSections.astro';
 import { t } from '../i18n';
 import { resolvePageSeo } from '../config/seo';
-import { websiteSchema } from '../utils/schema';
+import { organizationSchema, websiteSchema } from '../utils/schema';
 import { webpSrc } from '../utils/responsiveImage';
 import { PRIMARY_CHEAT_IMAGE } from '../config/siteImages';
 const seo = resolvePageSeo('/');
@@ -17,7 +17,7 @@ const heroLcpImage = webpSrc(PRIMARY_CHEAT_IMAGE, 512);
 <BaseLayout
   title={seo.title}
   description={seo.description}
-  jsonLd={[websiteSchema()]}
+  jsonLd={[websiteSchema(), organizationSchema()]}
 >
   <link
     slot="head"

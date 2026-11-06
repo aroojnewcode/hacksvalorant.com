@@ -4,24 +4,24 @@ import { resolveDistDir } from './dist-dir.mjs';
 
 const dist = resolveDistDir();
 const key = process.env.INDEXNOW_KEY?.trim();
-const host = process.env.INDEXNOW_HOST?.trim() || 'r6hacks.org';
+const host = process.env.INDEXNOW_HOST?.trim() || 'hacksvalorant.com';
 
 if (!key) {
   console.log('IndexNow: skipped (INDEXNOW_KEY not set).');
   process.exit(0);
 }
 
-const sitemapPath = [
-  path.join(dist, 'sitemap-all.xml'),
-  path.join(dist, 'sitemap-0.xml'),
-].find((p) => fs.existsSync(p));
-if (!sitemapPath) {
-  console.warn('IndexNow: sitemap-all.xml missing — skipping ping.');
+const childSitemaps = ['sitemap-pages.xml', 'sitemap-products.xml', 'sitemap-blog.xml']
+  .map((name) => path.join(dist, name))
+  .filter((file) => fs.existsSync(file));
+if (childSitemaps.length === 0) {
+  console.warn('IndexNow: child sitemaps missing — skipping ping.');
   process.exit(0);
 }
 
-const sitemap = fs.readFileSync(sitemapPath, 'utf8');
-const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).slice(0, 10000);
+const urlList = childSitemaps
+  .flatMap((file) => [...fs.readFileSync(file, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]))
+  .slice(0, 10000);
 
 if (urlList.length === 0) {
   console.warn('IndexNow: no URLs found in sitemap.');

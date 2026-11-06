@@ -44,7 +44,7 @@ const REPLACEMENTS = [
   ['Bodycamhack', 'Borderlandscheats'],
   ['bodycamhack', 'borderlandscheats'],
 
-  ['/go/r6/', '/go/r6/'],
+  ['/go/valorant/', '/go/valorant/'],
   ['/go/r6', '/go/r6'],
   ["checkoutPath('bodycam')", "checkoutPath('borderlands')"],
   ['checkoutPath("bodycam")', 'checkoutPath("borderlands")'],

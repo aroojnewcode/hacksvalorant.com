@@ -1,4 +1,5 @@
 import type { SitemapItem } from '@astrojs/sitemap';
+import { resolve301Redirect } from './redirect-map.mjs';
 import { blogPosts } from '../data/blog';
 import { parseBlogDate } from '../utils/schema';
 
@@ -18,6 +19,8 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return undefined;
   }
 
+  if (resolve301Redirect(path)) return undefined;
+
   if (path === '/') {
     item.priority = 1;
     item.changefreq = 'weekly';
@@ -36,10 +39,8 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return item;
   }
 
-  if (path.startsWith('/forum/')) {
-    item.priority = 0.6;
-    item.changefreq = 'weekly';
-    return item;
+  if (path.startsWith('/forum/') && path !== '/forum/') {
+    return undefined;
   }
 
   if (path.startsWith('/blog/')) {

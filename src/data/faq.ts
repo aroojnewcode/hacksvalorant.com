@@ -35,12 +35,12 @@ function expandFaqAnswer(answer: string, faqId: string): string {
     ELITE: link(`Elite tier checkout (${faqId})`, productPath('elite')),
     LITE: link(`Lite ESP tier (${faqId})`, productPath('lite')),
     PRO: link(`Pro aimbot tier (${faqId})`, productPath('pro')),
-    PRODUCTS_HUB: link(`Full R6 catalog (${faqId})`, ROUTES.products),
+    PRODUCTS_HUB: link(`Full Valorant catalog (${faqId})`, ROUTES.products),
     HWID: link(`HWID spoofer utility — ${faqId}`, productPath('hwid-spoofer')),
     UGC: link(`UGC appeal tools — ${faqId}`, productPath('ugc')),
-    SKIN: link(`Operator loadout tools pack — ${faqId}`, productPath('unlock-all')),
+    SKIN: link(`Skin preview tools pack — ${faqId}`, productPath('unlock-all')),
     FAQ_PAGE: link(`Full FAQ index — ${faqId}`, ROUTES.faq),
-    BLOG: link(`R6 blog guides — ${faqId}`, ROUTES.blog),
+    BLOG: link(`Valorant blog guides — ${faqId}`, ROUTES.blog),
   };
   return Object.entries(slots).reduce(
     (text, [key, html]) => text.replaceAll(`{{${key}}}`, html),
@@ -57,36 +57,36 @@ const rawSiteFaqs: SiteFaqItem[] = [
     id: 'status',
     topic: 'setup',
     icon: 'faqStatus',
-    q: 'Where do I check if R6 hacks are online?',
-    a: a('The live status banner is on r6hacks.org and in the Discord #status channel. Always check after a Rainbow Six Siege or BattlEye update.'),
+    q: 'Where do I check if Valorant hacks are online?',
+    a: a('The live status banner is on hacksvalorant.com and in the Discord #status channel. Always check after a Valorant or Vanguard update.'),
   },
   {
     id: 'after-buy',
     topic: 'setup',
     icon: 'faqAfterBuy',
     q: 'What happens after I buy?',
-    a: a('Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Rainbow Six Siege.'),
+    a: a('Your portal unlocks the loader, setup guide and config library via our secure checkout. Follow the guide before launching Valorant.'),
   },
   {
     id: 'pricing',
     topic: 'plans',
     icon: 'faqComparePlans',
-    q: 'How much do R6 hacks cost?',
-    a: a('Checkout plans are Monthly for $35 (31 days of access) and Lifetime for $150 (unlimited access). Both include the same Rainbow Six Siege trainer modules at Zadeyo checkout.'),
+    q: 'How much do Valorant hacks cost?',
+    a: a('Checkout plans are Monthly for $35 (31 days of access) and Lifetime for $150 (unlimited access). Both include the same Valorant trainer modules at Zadeyo checkout.'),
   },
   {
     id: 'ban-risk',
     topic: 'safety',
     icon: 'faqBanRisk',
-    q: 'Can I get banned using third-party r6 hacks?',
-    a: a('Yes—any modification carries risk. BattlEye and report systems evolve. Read current status and accept the risk before use.'),
+    q: 'Can I get banned using third-party Valorant hacks?',
+    a: a('Yes—any modification carries risk. Vanguard and report systems evolve. Read current status and accept the risk before use.'),
   },
   {
     id: 'platforms',
     topic: 'setup',
     icon: 'faqPlatforms',
     q: 'Which platforms are supported?',
-    a: a('Rainbow Six Siege via Ubisoft Connect on Windows 10/11 64-bit only. macOS and Linux are not supported.'),
+    a: a('Valorant via the Riot Client on Windows 10/11 64-bit only. macOS and Linux are not supported.'),
   },
   {
     id: 'license-move',
@@ -106,8 +106,8 @@ const rawSiteFaqs: SiteFaqItem[] = [
     id: 'what-is-esp',
     topic: 'esp',
     icon: 'faqWhatIsEsp',
-    q: 'What is Rainbow Six Siege wall ESP / ESP?',
-    a: `wall ESP and player ESP show enemy positions, chests, loot and POI camps through storm circle. {{LITE}} covers awareness overlays. {{PRO}} and {{ELITE}} add script modules on top.`,
+    q: 'What is Valorant wall ESP / ESP?',
+    a: `Wall ESP and player ESP show enemy positions, economy cues and map context. {{LITE}} covers awareness overlays. {{PRO}} and {{ELITE}} add aim-assist modules on top.`,
     scopes: ['lite', 'pro', 'elite'],
   },
   {
@@ -115,14 +115,14 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'esp',
     icon: 'faqEspVsScripts',
     q: 'What is the difference between wall ESP and aimbot?',
-    a: `wall ESP and ESP are information overlays—they do not cast abilities. Aimbot, Smooth Aim and Sticky Aim are aimbot on {{PRO}} and {{ELITE}}. You can run awareness-only on {{LITE}}.`,
+    a: `Wall ESP and ESP are information overlays—they do not cast agent abilities for you. Aimbot, Smooth Aim and Sticky Aim are aim-assist on {{PRO}} and {{ELITE}}. You can run awareness-only on {{LITE}}.`,
   },
   {
     id: 'which-tier-esp',
     topic: 'plans',
     icon: 'faqWhichTierEsp',
     q: 'Which tier do I need for wall ESP only?',
-    a: `{{LITE}} is awareness only: player ESP, chest locator, loot timers and radar hack. {{PRO}} adds aimbot. {{ELITE}} adds bots, kill steal and Operator loadout tools.`,
+    a: `{{LITE}} is awareness only: player ESP, economy cues, timers and radar-style overlay. {{PRO}} adds aimbot. {{ELITE}} adds advanced assists and skin preview tools.`,
     scopes: ['lite'],
   },
   {
@@ -159,7 +159,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     id: 'undetected',
     topic: 'safety',
     icon: 'faqUndetected',
-    q: 'Are undetected R6 hacks guaranteed?',
+    q: 'Are undetected Valorant hacks guaranteed?',
     a: a('No. Undetected is current status on the product page—not a permanent guarantee. Stop if the build shows updating, testing, or detected.'),
   },
   {
@@ -167,14 +167,14 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'safety',
     icon: 'faqEspSafer',
     q: 'Is wall ESP safer than aimbot?',
-    a: a('ESP is quieter in replay than obvious bot patterns, but it is still a hack. BattlEye does not ignore overlays because you left aimbot off.'),
+    a: a('ESP is quieter in replay than obvious bot patterns, but it is still a hack. Vanguard does not ignore overlays because you left aimbot off.'),
   },
   {
     id: 'hwid-when',
     topic: 'products',
     icon: 'faqHwidWhen',
     q: 'When do I need the HWID Spoofer?',
-    a: `Use {{HWID}} when fresh Ubisoft accounts fail instantly on one PC but work elsewhere—hardware enforcement. Not for account-only BattlEye cases; see {{UGC}} instead.`,
+    a: `Use {{HWID}} when fresh Riot accounts fail instantly on one PC but work elsewhere—hardware enforcement. Not for account-only restriction cases; see {{UGC}} instead.`,
     scopes: ['hwid-spoofer'],
   },
   {
@@ -182,14 +182,14 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqUgcWhat',
     q: 'What is UGC?',
-    a: `{{UGC}} (Unban & Governance Control) is an appeal workspace for Ubisoft account restrictions and BattlEye bans—custom workflows and case tracking, not a guaranteed unban service.`,
+    a: `{{UGC}} (Unban & Governance Control) is an appeal workspace for Riot account restrictions and Vanguard enforcement—custom workflows and case tracking, not a guaranteed unban service.`,
     scopes: ['ugc'],
   },
   {
     id: 'skin-changer',
     topic: 'products',
     icon: 'faqSkinChanger',
-    q: 'Does Operator loadout tools modify my in-game inventory?',
+    q: 'Do skin preview tools modify my in-game inventory?',
     a: `{{SKIN}} previews cosmetics locally on your client. Other players see your real inventory. Included with {{ELITE}}; available standalone for cosmetic preview only.`,
     scopes: ['unlock-all'],
   },
@@ -198,14 +198,14 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqExternalLoader',
     q: 'Is the loader injected into the game folder?',
-    a: `R6 Hacks runs external with cloud config sync—no files injected into the Rainbow Six Siege directory. BattlEye risk still applies. See {{PRODUCTS_HUB}}.`,
+    a: `Valorant Hacks runs external with cloud config sync—no files injected into the Valorant game folder. Vanguard risk still applies. See {{PRODUCTS_HUB}}.`,
   },
   {
     id: 'blog-vs-hacks',
     topic: 'blog',
     icon: 'faqBlogVsCheats',
     q: 'Are blog hack codes the same as ranked hacks?',
-    a: `No. Blog articles about Steam console commands apply only in custom lobbies with hacks enabled. Ranked r6 hacks are separate products—see {{LITE}}, {{PRO}} and {{ELITE}}.`,
+    a: `No. Blog tips about practice-range or custom modes are not the same as ranked modules. Ranked Valorant hacks are separate products—see {{LITE}}, {{PRO}} and {{ELITE}}.`,
   },
   {
     id: 'blog-setup',
@@ -234,7 +234,7 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoPro',
     q: 'Who should buy Pro?',
-    a: `Ranked players who want Aimbot, Smooth Aim and Hotkey macros with wall ESP included. Pro is the most popular tier at r6hacks.org.`,
+    a: `Ranked players who want Aimbot, Smooth Aim and Hotkey macros with wall ESP included. Pro is the most popular tier at hacksvalorant.com.`,
     scopes: ['pro'],
   },
   {
@@ -242,29 +242,29 @@ const rawSiteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoElite',
     q: 'Who should buy Elite?',
-    a: `Operators who want Loot Assist, Triggerbot, Operator loadout tools and priority patch delivery when slots are open.`,
+    a: `Players who want Loot Assist, Triggerbot, skin preview tools and priority patch delivery when slots are open.`,
     scopes: ['elite'],
   },
   {
     id: 'eac-update',
     topic: 'safety',
     icon: 'faqEacUpdate',
-    q: 'What should I do after a BattlEye update?',
-    a: a('Check r6hacks.org status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
+    q: 'What should I do after a Vanguard update?',
+    a: a('Check hacksvalorant.com status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
   },
   {
     id: 'discord-help',
     topic: 'setup',
     icon: 'faqDiscordHelp',
     q: 'How do I get install help?',
-    a: a('Open Discord after purchase with your order email, Windows version and Rainbow Six Siege client build. Staff walk through loader setup live.'),
+    a: a('Open Discord after purchase with your order email, Windows version and Valorant client build. Staff walk through loader setup live.'),
   },
   {
     id: 'zero-build-ranked',
     topic: 'plans',
     icon: 'faqZoomRanked',
     q: 'Do tiers work in Deathmatch and ranked?',
-    a: `Yes—{{LITE}}, {{PRO}} and {{ELITE}} include Deathmatch and ranked presets in the portal. Tune distance caps and script delay before your first queue.`,
+    a: `Yes—{{LITE}}, {{PRO}} and {{ELITE}} include Deathmatch and ranked presets in the portal. Tune distance caps and input delay before your first queue.`,
   },
   {
     id: 'zoom-hack',
@@ -286,8 +286,8 @@ const rawSiteFaqs: SiteFaqItem[] = [
     id: 'private-hacks',
     topic: 'safety',
     icon: 'faqPrivateCheats',
-    q: 'What are private R6 hacks?',
-    a: a('Private means per-user keys and maintained builds—not public zip packs. R6 Hacks ships portal delivery for ESP, aimbot and wall ESP tiers.'),
+    q: 'What are private Valorant hacks?',
+    a: a('Private means per-user keys and maintained builds—not public zip packs. Valorant Hacks ships portal delivery for ESP, aimbot and wall ESP tiers.'),
   },
   {
     id: 'faq-more',
@@ -313,7 +313,7 @@ export function getAllFaqs(): SiteFaqItem[] {
 /** Shared FAQ block copy + filters (home, /faq/, products, blog). */
 export const SITE_FAQ_SECTION_COPY = {
   eyebrow: 'All topics',
-  title: 'R6 hacks FAQ',
+  title: 'Valorant hacks FAQ',
   subtitle: 'Filter by hack plans, wall ESP, aimbot, products, setup and guides.',
 } as const;
 
@@ -330,7 +330,7 @@ export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
 /** Section copy when FAQ list is scoped to the current page (not /faq/). */
 export const CONTEXTUAL_FAQ_SECTION_COPY = {
   eyebrow: 'Hack FAQ',
-  title: 'R6 hacks questions',
+  title: 'Valorant hacks questions',
   subtitle: 'Straight answers on aimbot, ESP, bans and setup — see the full FAQ for every topic.',
 } as const;
 
@@ -374,7 +374,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogGuideStart',
       q: 'Should I use console hack codes in ranked?',
-      a: a('No. Shooting Range lobby hack codes only work in custom games with hacks enabled. Ranked requires separate r6 hacks from r6hacks.org tiers.'),
+      a: a('No. Custom-game-only tricks do not apply in ranked. Ranked requires separate Valorant hacks from hacksvalorant.com tiers.'),
     },
     {
       id: 'blog-guide-tier',
@@ -404,7 +404,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogSetupLobby',
       q: 'Should I test in a lobby first?',
-      a: a('Yes. Load conservative presets in a lobby or Deathmatch before ranked. Tune script delay and ESP distance caps over several sessions.'),
+      a: a('Yes. Load conservative presets in a custom game or Deathmatch before ranked. Tune input delay and ESP distance caps over several sessions.'),
     },
   ],
   Security: [
@@ -438,7 +438,7 @@ const defaultBlogFaqs: SiteFaqItem[] = [
     topic: 'blog',
     icon: 'faqBlogDefault3',
     q: 'Will settings in this article work next patch?',
-    a: a('Re-check status after every Rainbow Six Siege update. Portal presets update with patch notes—reload configs instead of copying old sliders.'),
+    a: a('Re-check status after every Valorant update. Portal presets update with patch notes—reload configs instead of copying old sliders.'),
   },
 ];
 
@@ -494,7 +494,7 @@ export const compareRows = [
   { feature: 'Triggerbot', icon: 'compareAutoKillSteal' as const, lite: false, pro: false, elite: true },
   { feature: 'Recoil control', icon: 'compareAutoShieldBreak' as const, lite: false, pro: false, elite: true },
   { feature: 'Full wall ESP suite', icon: 'compareFullMapHack' as const, lite: false, pro: false, elite: true },
-  { feature: 'Operator loadout tools (Loadout Pack)', icon: 'compareSkinChanger' as const, lite: false, pro: false, elite: true },
+  { feature: 'Skin preview tools (Loadout Pack)', icon: 'compareSkinChanger' as const, lite: false, pro: false, elite: true },
   { feature: 'Priority patch queue', icon: 'comparePriorityPatch' as const, lite: false, pro: false, elite: true },
   { feature: 'Direct dev Discord support', icon: 'compareDevSupport' as const, lite: false, pro: false, elite: true },
   { feature: 'Cloud config backup', icon: 'compareCloudBackup' as const, lite: true, pro: true, elite: true },

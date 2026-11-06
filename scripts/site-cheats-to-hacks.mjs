@@ -12,7 +12,7 @@ const EXTS = new Set(['.ts', '.astro', '.mjs', '.js', '.json', '.md', '.txt', '.
 const SLUG_REPLACEMENTS = [
   ['buy-r6-cheats', 'buy-r6-hacks'],
   ['r6-cheat-setup', 'r6-hack-setup'],
-  ['/r6-cheats/', '/r6-hacks/'],
+  ['/r6-cheats/', '/valorant-hacks/'],
   ['/r6-cheats', '/r6-hacks'],
   ['r6CheatsLanding', 'r6HacksLanding'],
   ['%2Fr6-cheats', '%2Fr6-hacks'],

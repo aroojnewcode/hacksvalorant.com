@@ -9,7 +9,7 @@ export interface ProductPlan {
   popular?: boolean;
 }
 
-/** Matches Zadeyo Rainbow Six Siege offers (Monthly $35 / 31 days, Lifetime $150). */
+/** Matches Zadeyo Valorant offers (Monthly $35 / 31 days, Lifetime $150). */
 const standardPlans: ProductPlan[] = [
   {
     id: 'monthly',

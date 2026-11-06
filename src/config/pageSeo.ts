@@ -14,106 +14,100 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Tactical overlays, tuned aim assist, operator ESP | R6 Hacks',
+    title: 'Valorant Hacks for Windows PC | hacksvalorant.com',
     description:
-      'Tactical overlays, tuned aim assist, and operator ESP that stay readable in ranked—explore modules, compare forum settings, and PC sessions at r6hacks.org.',
-    h1: 'R6 HACKS',
+      'Compare undetected Valorant cheats for Windows PC. Review Lite, Pro, and Elite, then check out for loader access when the status banner is online.',
+    h1: 'Valorant Hacks for Windows PC',
   },
-  '/products/r6/': {
-    title: 'Rainbow Six Siege – Buy R6 PC hacks shop and tiers',
+  '/products/valorant-cheats/': {
+    title: 'Valorant Cheat Products for Sale | Lite, Pro, Elite',
     description:
-      'Rainbow Six Siege shop: R6 hacks for PC — Elite aimbot, wall ESP, HWID spoofer, UGC recovery and Operator loadout tools checkout at r6hacks.org.',
-    h1: 'Rainbow Six Siege — R6 hack tiers and checkout',
+      'Shop Valorant cheat products for Windows PC. Open a Lite, Pro, Elite, or utility page and compare the feature list before you check out.',
+    h1: 'Valorant Cheat Products',
   },
-  '/products/r6/lite/': {
-    title: 'R6 Lite hacks — player ESP, radar and loot timers on PC',
+  '/products/valorant-cheats/lite/': {
+    title: 'Valorant Lite Cheats for Sale | ESP and Radar',
     description:
-      'R6 Lite hacks on PC: player ESP, gadget markers, roam timers and mini-radar without aimbot. Stream-proof overlay and ranked presets at r6hacks.org.',
-    h1: 'R6 Lite hacks — player ESP, radar and loot timers',
+      'Valorant Lite cheats for sale cover player ESP, radar, and FOV on Windows PC. This tier leaves aimbot off. Compare the monthly and lifetime plans here.',
+    h1: 'Valorant Lite Cheats',
   },
-  '/products/r6/pro/': {
-    title: 'R6 Pro hacks — aimbot, smooth aim and wall ESP on PC',
+  '/products/valorant-cheats/pro/': {
+    title: 'Valorant Pro Cheats for Sale | Aimbot and ESP',
     description:
-      'R6 Pro hacks add aimbot, Smooth Aim, Sticky Aim and bone priority on top of Lite ESP — ranked-safe portal presets for Rainbow Six Siege on PC.',
-    h1: 'R6 Pro hacks — aimbot, smooth aim and wall ESP',
+      'Valorant Pro cheats for sale add aimbot, ESP, and recoil control on Windows PC. Read the feature list, then pick a monthly or lifetime plan on this page.',
+    h1: 'Valorant Pro Cheats',
   },
-  '/products/r6/elite/': {
-    title: 'Elite R6 hacks — loot assist, triggerbot and full wall ESP',
+  '/products/valorant-cheats/elite/': {
+    title: 'Valorant Elite Cheats for Sale | Full Feature Set',
     description:
-      'Elite tier on PC: gadget ESP, triggerbot, loot assist, operator loadout tools and priority patch updates for Rainbow Six Siege at r6hacks.org.',
-    h1: 'Elite R6 hacks — loot assist, triggerbot and full wall ESP',
+      'Valorant Elite cheats for sale include the full ESP, aimbot, and utility set on Windows PC. Compare what Elite adds before you open checkout.',
+    h1: 'Valorant Elite Cheats',
   },
-  '/products/r6/hwid-spoofer/': {
-    title: 'HWID spoofer for Rainbow Six Siege hardware bans on PC',
+  '/products/valorant-cheats/hwid-spoofer/': {
+    title: 'Valorant HWID Spoofer for Sale | After a Hardware Ban',
     description:
-      'Rainbow Six Siege HWID spoofer for PC hardware bans: compatibility scan, guided spoof workflow and post-check steps before you launch again on r6hacks.org.',
-    h1: 'HWID spoofer for Rainbow Six Siege hardware bans',
+      'The Valorant HWID spoofer is for a hardware ban, not an account-only restriction. Read the reset steps on this page before you buy.',
+    h1: 'Valorant HWID Spoofer',
   },
-  '/products/r6/ugc/': {
-    title: 'UGC tools — BattlEye and Ubisoft ban appeals on PC',
+  '/products/valorant-cheats/ugc/': {
+    title: 'Valorant UGC Recovery for Sale | Account Appeals',
     description:
-      'UGC appeal workspace for Rainbow Six Siege: organize BattlEye and Ubisoft disputes, case notes and status tracking — separate checkout at r6hacks.org.',
-    h1: 'UGC tools — BattlEye and Ubisoft ban appeals',
+      'Valorant UGC recovery is an appeal workspace for Riot and Vanguard restrictions. It is not a cheat tier, and it does not guarantee an unban.',
+    h1: 'Valorant UGC Recovery',
   },
-  '/products/r6/unlock-all/': {
-    title: 'Operator loadout tools — local wrap and weapon previews',
+  '/products/valorant-cheats/unlock-all/': {
+    title: 'Valorant Skin Changer for Sale | Local Previews',
     description:
-      'Loadout Pack / operator loadout tools: preview outfits, wraps and weapons locally with your Rainbow Six Siege client — no in-game purchase required.',
-    h1: 'Operator loadout tools — local wrap and weapon previews',
+      'The Valorant skin changer previews cosmetics on your own client. It does not change the skins other players see during a live match.',
+    h1: 'Valorant Skin Changer',
   },
-  '/products/r6/utilities/': {
-    title: 'R6 utilities — HWID spoofer, UGC and loadout tools',
+  '/products/valorant-cheats/utilities/': {
+    title: 'Compare Valorant Utility Tools | HWID, UGC, Skins',
     description:
-      'Compare Rainbow Six Siege utilities on PC: HWID spoofer after hardware flags, UGC ban appeals, and local operator loadout tools at r6hacks.org.',
-    h1: 'R6 utilities — HWID spoofer, UGC and loadout tools',
+      'Compare the Valorant HWID spoofer, UGC recovery tool, and skin changer. Open the product page that matches the problem you need to solve.',
+    h1: 'Compare Valorant Utility Tools',
   },
   '/blog/': {
-    title: 'R6 blogs — Siege guides on aimbot, ESP and BattlEye',
+    title: 'Valorant Cheat Guides | ESP, Aimbot, and Tiers',
     description:
-      'Browse R6 blogs for Rainbow Six Siege on PC: aimbot setup, ESP and wall ESP tiers, Lite vs Pro, practice lobbies, and BattlEye patch-day checklists.',
-    h1: 'R6 blogs & Siege guides — aimbot, ESP, wall ESP and BattlEye',
+      'Valorant cheat guides for ESP, aimbot, radar, and tier choice. Use these how-tos before you pick Lite, Pro, or Elite on the product pages.',
+    h1: 'Valorant Cheat Guides',
   },
   '/forum/': {
-    title: 'Forum — Rainbow Six Siege loader and tier help',
+    title: 'Valorant Buyer Forum | Loader and Tier Questions',
     description:
-      'Community forum for loader setup, aimbot configs, BattlEye status and product questions, with answers from r6hacks.org guides.',
-    h1: 'Forum — Rainbow Six Siege loader setup, tier help and discussions',
+      'Valorant buyer forum for loader setup, tier choice, and guide questions. Each topic links to the full how-to instead of repeating it.',
+    h1: 'Valorant Buyer Forum',
   },
   '/faq/': {
-    title: 'FAQ – R6 tiers, bans, setup and BattlEye loader help',
+    title: 'Valorant Hacks FAQ | Tiers, Vanguard, Checkout',
     description:
-      'FAQ on Lite, Pro and Elite tiers, aimbot, wall ESP, radar, HWID spoofer, Operator loadout tools, bans and loader setup at r6hacks.org.',
-    h1: 'FAQ — R6 Hacks tiers, bans, BattlEye setup, loader help and checkout',
+      'Answers about Valorant cheat tiers, Vanguard, the loader, and checkout. Read the questions on this page before you open a support ticket.',
+    h1: 'Valorant Hacks FAQ',
   },
   '/terms/': {
-    title: 'Terms of Service — R6 Hacks shop license and checkout',
+    title: 'Valorant Hacks Terms of Service | License and Sales',
     description:
-      'Terms for buying R6 hacks on r6hacks.org: license use, secure checkout delivery, refunds policy, and account risk when you purchase trainer products.',
-    h1: 'Terms of Service — R6 Hacks shop license and checkout',
+      'Terms for buying Valorant cheat access, including license use, delivery, refunds, and the risk of third-party software on a Riot account.',
+    h1: 'Valorant Hacks Terms of Service',
   },
   '/privacy/': {
-    title: 'Privacy – analytics, cookies and checkout at r6hacks.org',
+    title: 'Valorant Hacks Privacy Policy | Data and Cookies',
     description:
-      'Privacy: How the r6hacks.org shop uses analytics, cookies and contact data for checkout referrals, support tickets, and shop data use.',
-    h1: 'Privacy Policy — r6hacks.org analytics, cookies, checkout and contact data',
+      'How this site handles analytics, cookies, and the details you send with a support question or a checkout. Read the policy before you buy.',
+    h1: 'Valorant Hacks Privacy Policy',
   },
   '/about/': {
-    title: 'About — aimbot ESP tiers, setup guides and support',
+    title: 'About Valorant Hacks | Tiers, Guides, and Support',
     description:
-      'About r6hacks.org: aimbot esp for Lite, Pro and Elite on PC — operator portal loader setup, FAQ answers, Discord support, and live status before checkout.',
-    h1: 'About — aimbot ESP tiers, setup guides and support',
+      'About this Valorant cheats store: Windows PC tiers, loader delivery, patch-day updates, and Discord support before you buy a product.',
+    h1: 'About Valorant Hacks',
   },
   '/support/': {
-    title: 'R6 support — loader, HWID and checkout help on r6hacks.org',
+    title: 'Valorant Hacks Support | Loader, HWID, Checkout',
     description:
-      'R6 hacks support on r6hacks.org: Discord loader help, aimbot and ESP presets, HWID spoofer setup, checkout receipts, and links to the FAQ index.',
-    h1: 'R6 support — loader, HWID and checkout help',
-  },
-  '/r6-hacks/': {
-    title: 'R6 hacks landing — PC trainer tiers, loader and patch status',
-    description:
-      'R6 hacks utilities for Rainbow Six Siege on PC: aimbot, wall ESP, gadget ESP, loader updates, and tier comparison before checkout at r6hacks.org.',
-    h1: 'R6 hacks — PC trainer tiers, loader and patch status',
+      'Get help with the Valorant loader, HWID spoofer setup, and checkout receipts. Open a Discord ticket from this page with your order details.',
+    h1: 'Valorant Hacks Support',
   },
 };
 
@@ -130,121 +124,118 @@ export function getPageSeoEntry(pathname: string): PageSeoEntry | undefined {
 
 /** Blog post `<title>` / meta description overrides (natural phrasing, one topic term each). */
 export const BLOG_POST_SEO: Record<string, Partial<PageSeoEntry>> = {
-  'r6-radar': {
-    title: 'R6 radar guide — distance caps, FOV and camera zoom',
+  'valorant-minimap-radar': {
+    title: 'How to Set Up Valorant Radar and Minimap Overlays',
     description:
-      'Mini-radar and extended camera zoom for Rainbow Six Siege, with safe distance caps and awareness presets on PC at r6hacks.org.',
+      'How to set up a Valorant radar and minimap overlay, including distance caps and a first practice-range check before you queue.',
   },
-  'r6-practice-lobby': {
-    title: 'Practice lobbies — Shooting Range drills before ranked',
+  'valorant-range-practice': {
+    title: 'How to Practice Valorant Aim Drills Before Ranked',
     description:
-      'Use Shooting Range and bot lobbies to practice aimbot smoothness, ESP ranges and loadout presets before ranked matchmaking on PC.',
+      'How to use the Valorant range and custom games to tune aim and ESP before a competitive queue. This is a practice guide, not a product page.',
   },
-  'r6-stream-proof': {
-    title: 'Stream Proof – Hide wall ESP and script overlays from OBS',
+  'valorant-stream-proof': {
+    title: 'How to Test a Stream-Proof Valorant ESP Overlay',
     description:
-      'Hide wall ESP and script overlays from OBS, Game Bar and capture cards—stream-proof workflow for Rainbow Six Siege creators.',
+      'How to test whether OBS, Game Bar, or a capture card shows your Valorant overlay. Record a short clip and watch it before you go live.',
   },
-  'r6-aimbot-ranked': {
-    title: 'Ranked Aimbot — Bone Priority & Prediction Setup',
+  'valorant-aimbot-ranked': {
+    title: 'How Valorant Ranked Aimbot and Bone Select Work',
     description:
-      'Ranked aimbot configs for Rainbow Six Siege: bone priority, prediction, and smoothness presets on PC at r6hacks.org.',
+      'How Valorant ranked aimbot settings work, including bone select, smoothing, and a conservative first preset. Read this before you buy Pro or Elite.',
   },
-  'battleye-fix': {
-    title: 'BattlEye verification fix — loader reload help on R6 Siege',
+  'vanguard-verify-fix': {
+    title: 'What to Do When Valorant Vanguard Fails to Start',
     description:
-      'BattlEye verification errors on PC: verify game files, cold reboot, loader order, and when HWID or UGC recovery applies on r6hacks.org.',
+      'What to do when Valorant or Vanguard fails to start: repair the install, reboot, and check loader order before you assume the account is restricted.',
   },
-  'buy-r6-hacks': {
-    title: 'Buy R6 hacks in 2026 — secure Lite, Pro and Elite checkout',
+  'buy-valorant-hacks': {
+    title: 'How to Choose and Buy a Valorant Cheat Tier Today',
     description:
-      'How to buy R6 on PC: pick Lite, Pro or Elite, complete secure checkout, get operator portal access, install the loader, and check BattlEye status before ranked.',
+      'How to choose Lite, Pro, or Elite, finish checkout, and open the loader. Use this walkthrough, then buy from the matching product page.',
   },
-  'battleye-patch': {
-    title: 'R6 hacks BattlEye checklist — patch-day loader reload',
+  'vanguard-patch-checklist': {
+    title: 'Valorant Patch Day Checklist for the Loader Build',
     description:
-      'After each Rainbow Six Siege patch, check the status banner, reload your loader, verify ESP in a lobby, and run conservative presets before ranked on PC.',
+      'What to check on a Valorant patch day: status, a fresh loader download, and a custom-game test before you queue with a new build.',
   },
-  'r6-training-tips': {
-    title: 'Shooting Range tips — aimbot and ESP drills before ranked',
+  'valorant-training-tips': {
+    title: 'How to Drill Valorant ESP and Aim Before Ranked',
     description:
-      'Shooting Range and bot-lobby drills to tune aimbot smoothness, wall ESP ranges and radar before ranked on PC — then pick Lite or Pro at r6hacks.org.',
+      'How to drill Valorant ESP range and aim smoothing in the range before ranked. Keep the overlay small until the read feels comfortable.',
   },
-  'r6-hack-setup': {
-    title: 'Practice R6 hacks safely — Shooting Range vs ranked setup',
+  'valorant-hack-setup': {
+    title: 'How to Practice Valorant Hacks Before You Queue',
     description:
-      'How to test aimbot and ESP in Shooting Range or bot lobbies before ranked: conservative presets, status checks, and Lite vs Pro tiers on PC.',
+      'How to practice Valorant cheats in the range before a live queue, including presets, status checks, and the difference between Lite and Pro.',
   },
-  'r6-features': {
-    title: 'R6 hacks features — aimbot, ESP, radar and Elite tools',
+  'valorant-hack-features': {
+    title: 'Valorant Cheat Features by Tier | ESP and Aim',
     description:
-      'Full R6 hacks feature list on PC: aimbot, wall ESP, radar, loot assist, operator loadout tools, and how Lite, Pro and Elite tiers compare at r6hacks.org.',
+      'Valorant cheat features by tier: what Lite, Pro, and Elite include for ESP, aim, and radar. Use this to compare, then open the product page to buy.',
   },
-  'r6-console-commands': {
-    title: 'Shooting Range vs ranked R6 hacks — practice and live play',
+  'valorant-practice-vs-ranked': {
+    title: 'How Practice Modes Differ From Live Valorant Hacks',
     description:
-      'How Shooting Range practice differs from private aimbot and ESP in ranked: external loader workflow, presets, and tier choice on PC at r6hacks.org.',
+      'How Valorant practice modes differ from a live-queue loader. Range commands do not carry into ranked. This guide explains the difference.',
   },
-  'r6-lite-vs-pro': {
-    title: 'R6 Lite vs Pro — ESP-only or aimbot for ranked on PC',
+  'valorant-lite-vs-pro': {
+    title: 'How the Valorant Lite and Pro Cheat Tiers Differ',
     description:
-      'Compare Lite wall ESP and radar against Pro aimbot automation for Rainbow Six Siege ranked: report risk, presets, and upgrade path on r6hacks.org.',
+      'How Valorant Lite and Pro differ: Lite is ESP and radar, Pro adds aimbot. Read the comparison, then open the product page for the tier you want.',
   },
-  'r6-elite': {
-    title: 'Elite tier guide — loot assist, triggerbot and wall ESP',
+  'valorant-elite-tier': {
+    title: 'When to Upgrade to the Valorant Elite Cheat Tier',
     description:
-      'When to upgrade to Elite on PC: loot assist, triggerbot, operator loadout tools, full wall ESP, and conservative day-one presets after patches.',
+      'When to upgrade to Valorant Elite: extra modules, the fuller ESP set, and priority updates. Compare it with Lite and Pro before you switch.',
   },
-  'r6-esp-setup': {
-    title: 'Wall ESP setup — boxes, smoke alerts and ranked ranges',
+  'valorant-esp-setup': {
+    title: 'How to Set Up Valorant Wall ESP, Boxes, and Radar',
     description:
-      'Configure wall ESP for Rainbow Six Siege ranked: player boxes, gadget ESP, smoke alerts, distance caps, and Lite/Elite presets on PC.',
+      'How to set up Valorant wall ESP and radar, including boxes, ability markers, and a distance cap you can read during a round.',
   },
-  'r6-loadouts': {
-    title: 'Operator loadout tools — local skin and wrap previews',
+  'valorant-skin-preview': {
+    title: 'How the Valorant Skin Changer Local Preview Works',
     description:
-      'Loadout Pack guide: preview outfits, wraps and weapons locally on PC with your Rainbow Six Siege client — separate from Lite, Pro and Elite hacks.',
+      'How the Valorant skin changer preview works on your client. It is a local cosmetic tool and it is separate from the Lite, Pro, and Elite combat tiers.',
   },
-  'r6-hwid-ban': {
-    title: 'HWID ban vs account ban — spoofer or new account on PC',
+  'valorant-hwid-ban': {
+    title: 'How to Tell a Valorant Hardware Ban From an Account Ban',
     description:
-      'After a BattlEye ban on PC: tell HWID flags from account bans, when to use HWID spoofer or UGC appeals, and safe return to r6hacks.org tiers.',
+      'How to tell a Valorant hardware ban from an account-only restriction, and when the HWID spoofer page is the right next step.',
   },
-  'r6-aimbot-combat': {
-    title: 'Weapon aimbot guide — AR, SMG and shotgun on Pro tier',
+  'valorant-aimbot-weapons': {
+    title: 'How Valorant Bone Select and Weapon Profiles Work',
     description:
-      'Per-weapon aimbot profiles for Rainbow Six Siege Pro tier: AR spray, SMG tracking, shotgun push, smoothness presets, and ranked testing on PC.',
+      'How Valorant bone select and per-weapon aim profiles work for rifles, SMGs, and shotguns. Tune one weapon at a time in the range.',
   },
-  'r6-external-loader': {
-    title: 'External loader guide — how R6 hacks run outside Siege',
+  'valorant-external-loader': {
+    title: 'How External Valorant Cheat Loaders Work on PC',
     description:
-      'Why external r6 hacks use a separate loader on PC, launch order before Rainbow Six Siege, cloud config sync, and BattlEye-aware updates at r6hacks.org.',
+      'How an external Valorant loader runs outside the game client, how overlays are drawn, and how patch updates reach the portal.',
   },
 };
 
 /** Optional on-page H1 overrides (blog posts). */
 export const BLOG_POST_PAGE_H1: Record<string, string> = {
-  'battleye-fix':
-    'BattlEye verification fix — loader reload help when Rainbow Six Siege will not launch',
-  'r6-stream-proof':
-    'Stream-Proof Overlay Setup — hide wall ESP and script overlays from OBS (R6 hacks)',
-  'r6-practice-lobby': 'Shooting Range Practice: Aim Drills Before Ranked (R6 hacks)',
-  'r6-radar':
-    'Rainbow Six Siege radar — distance caps, FOV and camera zoom',
-  'r6-features': 'R6 hacks features — aimbot, wall ESP, radar and Elite tools',
-  'r6-lite-vs-pro': 'R6 Lite vs Pro — ESP-only or aimbot for ranked play',
-  'r6-elite': 'Elite tier guide — loot assist, triggerbot and full wall ESP',
-  'r6-esp-setup': 'Wall ESP setup — boxes, smoke alerts and ranked distance caps',
-  'r6-aimbot-ranked': 'Ranked aimbot configs — bone priority and prediction on PC',
-  'r6-aimbot-combat': 'Weapon aimbot guide — AR, SMG and shotgun profiles',
-  'r6-external-loader': 'External loader guide — how R6 hacks run outside Siege',
-  'r6-hwid-ban': 'HWID ban vs account ban — spoofer, UGC and recovery paths',
-  'r6-loadouts': 'Operator loadout tools — local skin and wrap previews',
-  'r6-hack-setup': 'Practice R6 hacks safely — Shooting Range before ranked',
-  'r6-training-tips': 'Shooting Range tips — aimbot and ESP drills before ranked',
-  'r6-console-commands': 'Shooting Range practice vs ranked R6 hacks on PC',
-  'buy-r6-hacks': 'How to buy R6 hacks — Lite, Pro and Elite checkout walkthrough',
-  'battleye-patch': 'R6 hacks BattlEye checklist — patch-day loader reload',
+  'vanguard-verify-fix': 'What to Do When Valorant Vanguard Fails to Start',
+  'valorant-stream-proof': 'How to Test a Stream-Proof Valorant ESP Overlay',
+  'valorant-range-practice': 'How to Practice Valorant Aim Drills Before Ranked',
+  'valorant-minimap-radar': 'How to Set Up Valorant Radar and Minimap Overlays',
+  'valorant-hack-features': 'Valorant Cheat Features by Tier',
+  'valorant-lite-vs-pro': 'How the Valorant Lite and Pro Cheat Tiers Differ',
+  'valorant-elite-tier': 'When to Upgrade to the Valorant Elite Cheat Tier',
+  'valorant-esp-setup': 'How to Set Up Valorant Wall ESP, Boxes, and Radar',
+  'valorant-aimbot-ranked': 'How Valorant Ranked Aimbot and Bone Select Work',
+  'valorant-aimbot-weapons': 'How Valorant Bone Select and Weapon Profiles Work',
+  'valorant-external-loader': 'How External Valorant Cheat Loaders Work on PC',
+  'valorant-hwid-ban': 'How to Tell a Valorant Hardware Ban From an Account Ban',
+  'valorant-skin-preview': 'How the Valorant Skin Changer Local Preview Works',
+  'valorant-hack-setup': 'How to Practice Valorant Hacks Before You Queue',
+  'valorant-training-tips': 'How to Drill Valorant ESP and Aim Before Ranked',
+  'valorant-practice-vs-ranked': 'How Practice Modes Differ From Live Valorant Hacks',
+  'buy-valorant-hacks': 'How to Choose and Buy a Valorant Cheat Tier Today',
+  'vanguard-patch-checklist': 'Valorant Patch Day Checklist for the Loader Build',
 };
 
 export function getBlogPostSeo(slug: string, fallback: PageSeoEntry): PageSeoEntry {
@@ -266,7 +257,7 @@ export function productPageH1(pagePath: string, fallback: string): string {
 }
 
 /** Layout `<title>` for blog posts; ranked override is used verbatim when under 60 chars. */
-export function blogPostLayoutTitle(slug: string, postTitle: string, brand = 'R6 Hacks'): string {
+export function blogPostLayoutTitle(slug: string, postTitle: string, brand = 'Valorant Hacks'): string {
   const override = BLOG_POST_SEO[slug]?.title;
   if (override && override.length <= 60) return override;
   if (override) return `${override.slice(0, 57).trim()}…`;

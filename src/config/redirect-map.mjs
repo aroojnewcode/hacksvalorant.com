@@ -1,6 +1,6 @@
 import { SLUG_REDIRECTS } from './slug-redirects.mjs';
 
-export const CANONICAL_ORIGIN = 'https://r6hacks.org';
+export const CANONICAL_ORIGIN = 'https://hacksvalorant.com';
 
 /** Static 301 sources → final path (trailing slash on targets). */
 const REDIRECT_ENTRIES = [
@@ -12,59 +12,59 @@ const REDIRECT_ENTRIES = [
   ['/privacy', '/privacy/'],
   ['/terms', '/terms/'],
   ['/faq', '/faq/'],
-  ['/cheats', '/products/r6/'],
-  ['/cheats/', '/products/r6/'],
-  ['/cheats/lite', '/products/r6/lite/'],
-  ['/cheats/lite/', '/products/r6/lite/'],
-  ['/cheats/pro', '/products/r6/pro/'],
-  ['/cheats/pro/', '/products/r6/pro/'],
-  ['/cheats/elite', '/products/r6/elite/'],
-  ['/cheats/elite/', '/products/r6/elite/'],
-  ['/cheats/compare', '/blog/r6-lite-vs-pro/'],
-  ['/cheats/compare/', '/blog/r6-lite-vs-pro/'],
-  ['/hacks', '/products/r6/'],
-  ['/hacks/', '/products/r6/'],
-  ['/hacks/lite', '/products/r6/lite/'],
-  ['/hacks/lite/', '/products/r6/lite/'],
-  ['/hacks/pro', '/products/r6/pro/'],
-  ['/hacks/pro/', '/products/r6/pro/'],
-  ['/hacks/elite', '/products/r6/elite/'],
-  ['/hacks/elite/', '/products/r6/elite/'],
-  ['/hacks/compare', '/blog/r6-lite-vs-pro/'],
-  ['/hacks/compare/', '/blog/r6-lite-vs-pro/'],
-  ['/products/r6/utilities', '/products/r6/utilities/'],
-  ['/products/r6-cheats', '/products/r6/'],
-  ['/products/r6-cheats/', '/products/r6/'],
-  ['/products/r6-cheats/lite', '/products/r6/lite/'],
-  ['/products/r6-cheats/lite/', '/products/r6/lite/'],
-  ['/products/r6-cheats/pro', '/products/r6/pro/'],
-  ['/products/r6-cheats/pro/', '/products/r6/pro/'],
-  ['/products/r6-cheats/elite', '/products/r6/elite/'],
-  ['/products/r6-cheats/elite/', '/products/r6/elite/'],
-  ['/products/r6-cheats/hwid-spoofer', '/products/r6/hwid-spoofer/'],
-  ['/products/r6-cheats/hwid-spoofer/', '/products/r6/hwid-spoofer/'],
-  ['/products/r6-cheats/ugc', '/products/r6/ugc/'],
-  ['/products/r6-cheats/ugc/', '/products/r6/ugc/'],
-  ['/products/r6-cheats/unlock-all', '/products/r6/unlock-all/'],
-  ['/products/r6-cheats/unlock-all/', '/products/r6/unlock-all/'],
-  ['/products/r6-cheats/utilities', '/products/r6/utilities/'],
-  ['/products/r6-cheats/utilities/', '/products/r6/utilities/'],
-  ['/products/r6-hacks', '/products/r6/'],
-  ['/products/r6-hacks/', '/products/r6/'],
-  ['/products/r6-hacks/pro', '/products/r6/pro/'],
-  ['/products/r6-hacks/pro/', '/products/r6/pro/'],
-  ['/products/r6-hacks/lite', '/products/r6/lite/'],
-  ['/products/r6-hacks/lite/', '/products/r6/lite/'],
-  ['/products/r6-hacks/elite', '/products/r6/elite/'],
-  ['/products/r6-hacks/elite/', '/products/r6/elite/'],
-  ['/products/r6/account-recovery', '/products/r6/ugc/'],
-  ['/products/r6/account-recovery/', '/products/r6/ugc/'],
-  ['/products/dota-2-hacks', '/products/r6/'],
-  ['/products/dota-2-hacks/', '/products/r6/'],
-  ['/products/dota-2-hacks/elite', '/products/r6/elite/'],
-  ['/products/dota-2-hacks/elite/', '/products/r6/elite/'],
-  ['/products/dota-2-hacks/utilities', '/products/r6/utilities/'],
-  ['/products/dota-2-hacks/utilities/', '/products/r6/utilities/'],
+  ['/cheats', '/products/valorant-cheats/'],
+  ['/cheats/', '/products/valorant-cheats/'],
+  ['/cheats/lite', '/products/valorant-cheats/lite/'],
+  ['/cheats/lite/', '/products/valorant-cheats/lite/'],
+  ['/cheats/pro', '/products/valorant-cheats/pro/'],
+  ['/cheats/pro/', '/products/valorant-cheats/pro/'],
+  ['/cheats/elite', '/products/valorant-cheats/elite/'],
+  ['/cheats/elite/', '/products/valorant-cheats/elite/'],
+  ['/cheats/compare', '/blog/valorant-lite-vs-pro/'],
+  ['/cheats/compare/', '/blog/valorant-lite-vs-pro/'],
+  ['/hacks', '/products/valorant-cheats/'],
+  ['/hacks/', '/products/valorant-cheats/'],
+  ['/hacks/lite', '/products/valorant-cheats/lite/'],
+  ['/hacks/lite/', '/products/valorant-cheats/lite/'],
+  ['/hacks/pro', '/products/valorant-cheats/pro/'],
+  ['/hacks/pro/', '/products/valorant-cheats/pro/'],
+  ['/hacks/elite', '/products/valorant-cheats/elite/'],
+  ['/hacks/elite/', '/products/valorant-cheats/elite/'],
+  ['/hacks/compare', '/blog/valorant-lite-vs-pro/'],
+  ['/hacks/compare/', '/blog/valorant-lite-vs-pro/'],
+  ['/products/valorant-cheats/utilities', '/products/valorant-cheats/utilities/'],
+  ['/products/r6-cheats', '/products/valorant-cheats/'],
+  ['/products/r6-cheats/', '/products/valorant-cheats/'],
+  ['/products/r6-cheats/lite', '/products/valorant-cheats/lite/'],
+  ['/products/r6-cheats/lite/', '/products/valorant-cheats/lite/'],
+  ['/products/r6-cheats/pro', '/products/valorant-cheats/pro/'],
+  ['/products/r6-cheats/pro/', '/products/valorant-cheats/pro/'],
+  ['/products/r6-cheats/elite', '/products/valorant-cheats/elite/'],
+  ['/products/r6-cheats/elite/', '/products/valorant-cheats/elite/'],
+  ['/products/r6-cheats/hwid-spoofer', '/products/valorant-cheats/hwid-spoofer/'],
+  ['/products/r6-cheats/hwid-spoofer/', '/products/valorant-cheats/hwid-spoofer/'],
+  ['/products/r6-cheats/ugc', '/products/valorant-cheats/ugc/'],
+  ['/products/r6-cheats/ugc/', '/products/valorant-cheats/ugc/'],
+  ['/products/r6-cheats/unlock-all', '/products/valorant-cheats/unlock-all/'],
+  ['/products/r6-cheats/unlock-all/', '/products/valorant-cheats/unlock-all/'],
+  ['/products/r6-cheats/utilities', '/products/valorant-cheats/utilities/'],
+  ['/products/r6-cheats/utilities/', '/products/valorant-cheats/utilities/'],
+  ['/products/r6-hacks', '/products/valorant-cheats/'],
+  ['/products/valorant-hacks/', '/products/valorant-cheats/'],
+  ['/products/valorant-hacks/pro', '/products/valorant-cheats/pro/'],
+  ['/products/valorant-hacks/pro/', '/products/valorant-cheats/pro/'],
+  ['/products/valorant-hacks/lite', '/products/valorant-cheats/lite/'],
+  ['/products/valorant-hacks/lite/', '/products/valorant-cheats/lite/'],
+  ['/products/valorant-hacks/elite', '/products/valorant-cheats/elite/'],
+  ['/products/valorant-hacks/elite/', '/products/valorant-cheats/elite/'],
+  ['/products/valorant-cheats/account-recovery', '/products/valorant-cheats/ugc/'],
+  ['/products/valorant-cheats/account-recovery/', '/products/valorant-cheats/ugc/'],
+  ['/products/dota-2-hacks', '/products/valorant-cheats/'],
+  ['/products/dota-2-hacks/', '/products/valorant-cheats/'],
+  ['/products/dota-2-hacks/elite', '/products/valorant-cheats/elite/'],
+  ['/products/dota-2-hacks/elite/', '/products/valorant-cheats/elite/'],
+  ['/products/dota-2-hacks/utilities', '/products/valorant-cheats/utilities/'],
+  ['/products/dota-2-hacks/utilities/', '/products/valorant-cheats/utilities/'],
   ...Object.entries(SLUG_REDIRECTS),
 ];
 
@@ -108,7 +108,7 @@ export function resolvePathRedirect(pathname) {
 
 function isCanonicalProductionHost(host) {
   const h = host.toLowerCase();
-  return h === 'r6hacks.org' || h === 'www.r6hacks.org';
+  return h === 'hacksvalorant.com' || h === 'www.hacksvalorant.com';
 }
 
 /** @param {Headers} headers */
@@ -139,11 +139,11 @@ export function resolveCanonicalRedirect(request) {
   const production = isCanonicalProductionHost(host);
   const needsHttps =
     target.protocol === 'http:' || requestUsedHttp(request.headers);
-  const needsApex = host === 'www.r6hacks.org';
+  const needsApex = host === 'www.hacksvalorant.com';
 
   if (production && (needsHttps || needsApex)) {
     target.protocol = 'https:';
-    target.hostname = 'r6hacks.org';
+    target.hostname = 'hacksvalorant.com';
     changed = true;
   } else if (needsHttps) {
     target.protocol = 'https:';
@@ -156,7 +156,7 @@ export function resolveCanonicalRedirect(request) {
     target.search = url.search;
     if (production) {
       target.protocol = 'https:';
-      target.hostname = 'r6hacks.org';
+      target.hostname = 'hacksvalorant.com';
     }
     changed = true;
   }

@@ -4,19 +4,19 @@ import { footerLogoAltForPath } from '../config/seoLogoAlt';
 
 interface Props {
   showIcon?: boolean;
-  /** Header: pill lockup only (R6 white · Hacks blue). Footer: icon + tagline stack. */
+  /** Header: pill lockup only (Valorant white · Hacks accent). Footer: icon + tagline stack. */
   compact?: boolean;
   class?: string;
 }
 
 const { showIcon = false, compact = false, class: className } = Astro.props;
-const brandTagline = 'Rainbow Six Siege PC — Aimbot, ESP & Gadget tools';
+const brandTagline = 'Valorant PC — Aim assist, ESP & ability callouts';
 ---
 
 <a
   href="/"
   class:list={['site-brand', compact && 'site-brand--compact', className]}
-  aria-label={showIcon ? 'Return to r6hacks.org homepage' : t.ui.homeAria}
+  aria-label={showIcon ? 'Return to hacksvalorant.com homepage' : t.ui.homeAria}
 >
   {
     showIcon && (
@@ -32,12 +32,12 @@ const brandTagline = 'Rainbow Six Siege PC — Aimbot, ESP & Gadget tools';
   {
     compact ? (
       <span class="site-brand__pill" aria-hidden="true">
-        R6 <span class="site-brand__pill-accent">Hacks</span>
+        Valorant <span class="site-brand__pill-accent">Hacks</span>
       </span>
     ) : (
       <span class="site-brand__stack min-w-0" aria-hidden="true">
         <span class="site-brand__title">
-          R6 <span class="site-brand__title-accent">Hacks</span>
+          Valorant <span class="site-brand__title-accent">Hacks</span>
         </span>
         <span class="site-brand__tagline">{brandTagline}</span>
       </span>

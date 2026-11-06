@@ -42,7 +42,9 @@ const heroMarqueePills = [
   <div class="relative mx-auto flex max-w-6xl flex-col justify-center px-5">
     <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
       <div class="w-full max-w-xl space-y-6 text-left md:space-y-7 lg:max-w-2xl">
-        <Badge variant="secondary" class="uppercase tracking-wider">{h.eyebrow}</Badge>
+        {h.eyebrow.trim() ? (
+          <Badge variant="secondary" class="uppercase tracking-wider">{h.eyebrow}</Badge>
+        ) : null}
 
         <h1 id="hero-title" class="hero-title text-3xl font-bold leading-[1.08] tracking-tight md:text-4xl lg:text-[2.75rem]">
           <span class="hero-title__brand block uppercase text-foreground">{heroBrand}</span>

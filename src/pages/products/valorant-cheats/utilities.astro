@@ -18,17 +18,17 @@ import {
 } from '@/components/starwind/table';
 
 const utilities = productPages.filter((p) => p.kind === 'utility');
-const seo = resolvePageSeo('/products/r6/utilities/');
+const seo = resolvePageSeo('/products/valorant-cheats/utilities/');
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Products', path: productHub.path },
-  { name: 'Compare utilities', path: '/products/r6/utilities/' },
+  { name: 'Compare utilities', path: '/products/valorant-cheats/utilities/' },
 ];
 
 const utilityUseCases: Record<string, string> = {
   'hwid-spoofer': 'New PC or hardware flag after a ban—reset how your machine appears before a new account.',
   ugc: 'Structured appeal and account recovery workflows when access is restricted.',
-  'unlock-all': 'Local cosmetic preview and loadouts without buying every outfit on Steam.',
+  'unlock-all': 'Local cosmetic preview without buying every skin in the store.',
 };
 ---
 
@@ -37,9 +37,9 @@ const utilityUseCases: Record<string, string> = {
   description={seo.description}
   jsonLd={[
     webPageSchema({
-      name: 'Compare Rainbow Six Siege utilities',
+      name: 'Compare Valorant utilities',
       description: seo.description,
-      url: '/products/r6/utilities/',
+      url: '/products/valorant-cheats/utilities/',
     }),
     breadcrumbSchema(breadcrumbs),
     itemListSchema(
@@ -55,14 +55,12 @@ const utilityUseCases: Record<string, string> = {
       <Breadcrumbs items={breadcrumbs} />
 
       <header class="mt-6 max-w-3xl space-y-3">
-        <h1 class="text-3xl font-bold normal-case md:text-4xl">
-          Compare utilities — local Operator loadout tools / Pack, HWID spoofer and UGC
-        </h1>
+        <h1 class="text-3xl font-bold normal-case md:text-4xl">{seo.h1}</h1>
         <p class="text-lg text-muted-foreground">
-          These Rainbow Six Siege hack utilities solve different problems—HWID Spoofer, UGC, and Operator loadout tools each
+          These Valorant utilities solve different problems—HWID Spoofer, UGC, and skin preview tools each
           target a distinct recovery or cosmetic workflow. Match the tool to your situation before checkout.
         </p>
-        <h2 class="text-xl font-semibold text-foreground">Utilities: R6 Hacks</h2>
+        <h2 class="text-xl font-semibold text-foreground">Utilities: Valorant Hacks</h2>
       </header>
 
       <div class="mt-10 rounded-lg border border-border" tabindex="0" aria-label="Utility comparison">
@@ -113,7 +111,7 @@ const utilityUseCases: Record<string, string> = {
       </ul>
 
       <div class="mt-10">
-        <Button as="a" href={productHub.path} variant="outline">Return to R6 products hub</Button>
+        <Button as="a" href={productHub.path} variant="outline">Return to Valorant products hub</Button>
       </div>
     </div>
   </section>
